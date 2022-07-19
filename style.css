@@ -1251,7 +1251,7 @@ div.wpcf7-mail-sent-ok {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -1286,6 +1286,7 @@ div.wpcf7-mail-sent-ok {
 .common-header__logo {
   width: 74.5px;
   margin: 0 auto;
+  padding: 12px 0 27px;
 }
 
 @media screen and (max-width: 900px) {
@@ -1410,8 +1411,142 @@ div.wpcf7-mail-sent-ok {
   }
 }
 
+.common-header__menu li {
+  position: relative;
+}
+
+.common-header__menu li:not(:first-of-type) {
+  margin-top: 22px;
+}
+
+.common-header__menu li:first-of-type:before {
+  background-image: url(./img/common/icn_arrow-white.svg);
+}
+
+.common-header__menu li:last-of-type:before {
+  background-image: url(./img/common/icn_arrow-white.svg);
+}
+
+.common-header__menu li:nth-last-of-type(2):before {
+  background-image: url(./img/common/icn_arrow-white.svg);
+}
+
+.common-header__menu li:before {
+  content: "";
+  width: 16px;
+  height: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .common-header__menu a {
   display: block;
+}
+
+.common-header__scroll {
+  font-size: 14px;
+  display: block;
+  position: absolute;
+  left: 31px;
+  bottom: 110px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  line-height: 1.47368;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .common-header__scroll {
+    font-size: 14px;
+    font-size: 3.73333vw;
+    line-height: 1.5;
+    left: -2.66667vw;
+    bottom: 18.53333vw;
+  }
+}
+
+.common-header__scroll:before {
+  content: "";
+  width: 85px;
+  height: 1px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-animation: pathmove 2s cubic-bezier(1, 0, 0, 1) infinite;
+          animation: pathmove 2s cubic-bezier(1, 0, 0, 1) infinite;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .common-header__scroll:before {
+    width: 12vw;
+    left: calc(100% + 1.6vw);
+  }
+}
+
+@-webkit-keyframes pathmove {
+  0% {
+    -webkit-transform: translateY(-50%) scaleX(0);
+            transform: translateY(-50%) scaleX(0);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+  }
+  30% {
+    -webkit-transform: translateY(-50%) scaleX(1);
+            transform: translateY(-50%) scaleX(1);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+  }
+  30.1% {
+    -webkit-transform: translateY(-50%) scaleX(1);
+            transform: translateY(-50%) scaleX(1);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: translateY(-50%) scaleX(0);
+            transform: translateY(-50%) scaleX(0);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+}
+
+@keyframes pathmove {
+  0% {
+    -webkit-transform: translateY(-50%) scaleX(0);
+            transform: translateY(-50%) scaleX(0);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+  }
+  30% {
+    -webkit-transform: translateY(-50%) scaleX(1);
+            transform: translateY(-50%) scaleX(1);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+  }
+  30.1% {
+    -webkit-transform: translateY(-50%) scaleX(1);
+            transform: translateY(-50%) scaleX(1);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: translateY(-50%) scaleX(0);
+            transform: translateY(-50%) scaleX(0);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
 }
 
 /*  layout > footer
@@ -2425,5 +2560,22 @@ input[type="button"], input[type="reset"], input[type="submit"] {
 
 .top-kv__right {
   width: 50%;
+}
+
+.top-preview-info .mod-ttl {
+  width: 656px;
+  margin-left: auto;
+  position: relative;
+}
+
+.top-preview-info .mod-ttl:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #03283E;
+  opacity: .65;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /*# sourceMappingURL=style.css.map */

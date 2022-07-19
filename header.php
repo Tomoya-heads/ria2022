@@ -45,6 +45,7 @@
 						<li><a href="<?php echo home_url( '/general_contact/' ); ?>">お問い合わせ</a></li>
 					</ul>
 				</nav>
+				<span class="common-header__scroll font-en">Scroll</span>
 			</div>
 		</header>
 		<!-- ////ヘッダー -->

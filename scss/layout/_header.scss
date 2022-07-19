@@ -13,7 +13,7 @@
   background-size : cover;
   background-repeat : no-repeat;
   color: $white00;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -40,6 +40,7 @@
   &__logo{
     width : 74.5px;
     margin : 0 auto;
+    padding : 12px 0 27px;
     @include mq_tab{
     }
     @media screen and (max-width: 900px) {
@@ -128,8 +129,96 @@
     }
     @include mq_sp{
     }
+    & li {
+      position : relative;
+      &:not(:first-of-type) {
+        margin-top : 22px;
+      }
+      &:first-of-type {
+        &:before {
+          background-image : url(./img/common/icn_arrow-white.svg);
+        }
+      }
+      &:last-of-type {
+        &:before {
+          background-image : url(./img/common/icn_arrow-white.svg);
+
+        }
+      }
+      &:nth-last-of-type(2) {
+        &:before {
+          background-image : url(./img/common/icn_arrow-white.svg);
+        }
+      }
+      &:before {
+        content : "";
+        width  : 16px;
+        height : 8px;
+        background-size : cover;
+        background-repeat : no-repeat;
+        position : absolute;
+        left : 50%;
+        bottom : -10px;
+        transform : translateX(-50%);
+      }
+    }
     & a {
       display : block;
+    }
+  }
+  &__scroll {
+    font-size : 14px;
+    display: block;
+    position: absolute;
+    left: 31px;
+    bottom: 110px;
+    transform: rotate(90deg);
+    //transform-origin: left bottom;
+    line-height: (28/19);
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    color: $white00;
+    z-index: 2;
+    @include mq_sp{
+      @include fz_vw(28);
+      line-height: (42/28);
+      left: size_sp(-20);
+      bottom: size_sp(139);
+    }
+    &:before{
+      content: "";
+      width: 85px;
+      height: 1px;
+      background: $white00;
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 8px);
+      transform: translateY(-50%);
+      animation: pathmove 2s cubic-bezier(1, 0, 0, 1) infinite;
+      z-index: 1;
+      @include mq_sp{
+        $vw_12: size_sp(12);
+        width: size_sp(90);
+        left: calc(100% + #{$vw_12});
+      }
+    }
+    @keyframes pathmove {
+      0% {
+        transform: translateY(-50%) scaleX(0);
+        transform-origin: 0 0;
+      }
+      30% {
+        transform: translateY(-50%) scaleX(1);
+        transform-origin: 0 0;
+      }
+      30.1% {
+        transform: translateY(-50%) scaleX(1);
+        transform-origin: 100% 0;
+      }
+      100% {
+        transform: translateY(-50%) scaleX(0);
+        transform-origin: 100% 0;
+      }
     }
   }
 }
