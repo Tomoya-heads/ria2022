@@ -1,0 +1,135 @@
+/* layout > header
+============================================================================== */
+
+.home{
+  .common-header{
+  }
+}
+
+.common-header{
+  width: 120px;
+  height : 100vh;
+  background-image: url(./img/common/bg_header.svg);
+  background-size : cover;
+  background-repeat : no-repeat;
+  color: $white00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: $white00;
+  transition: 0.5s;
+  @include mq_sp{
+    height: $header_height_sp;
+  }
+  &.open{
+    background: $black00;
+  }
+  &.is-active{
+    background: $black00;
+    box-shadow: 0 3px 6px rgba($black00,0.1);
+  }
+  &__inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    @include mq_tab{}
+    @include mq_sp{}
+  }
+  &__logo{
+    width : 74.5px;
+    margin : 0 auto;
+    @include mq_tab{
+    }
+    @media screen and (max-width: 900px) {
+      @include abso-center();
+    }
+    @include mq_sp{
+      width: size_sp(200);
+    }
+    a{
+      display: block;
+      position: relative;
+      width: 100%;
+      @include mq_sp{
+      }
+    }
+  }
+  &__toggle{
+    @include abso-center-v();
+    display: none;
+    width: 54px;
+    height: 45px;
+    left: 27px;
+    cursor: pointer;
+    @media screen and (max-width: 900px) {
+      display: block;
+    }
+    @include mq_sp{
+      display: block;
+      width: size_sp(54);
+      height: size_sp(45);
+      left: size_sp(27);
+    }
+    &.open{
+      span{
+        &:first-of-type{
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+        &:nth-of-type(2){
+          opacity: 0;
+        }
+        &:last-of-type{
+          bottom: 50%;
+          transform: translateY(50%) rotate(45deg);
+        }
+      }
+    }
+    span{
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: $white00;
+      transition: 0.5s;
+      @media screen and (max-width: 900px) {
+        display: block;
+      }
+      @include mq_sp{
+        height: size_sp(3);
+      }
+      &:first-of-type{
+        top: 0;
+      }
+      &:nth-of-type(2){
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:last-of-type{
+        bottom: 0;
+      }
+    }
+  }
+  &__nav{
+    font-size : 12px;
+    font-weight : 700;
+    letter-spacing : .1em;
+    text-align : center;
+    width : 80px;
+    margin : 0 auto;
+  }
+  &__menu{
+    width: 100%;
+    @media screen and (max-width: 900px) {
+      display: block;
+      flex-wrap: wrap;
+    }
+    @include mq_sp{
+    }
+    & a {
+      display : block;
+    }
+  }
+}

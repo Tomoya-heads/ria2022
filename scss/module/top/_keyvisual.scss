@@ -1,0 +1,50 @@
+.top-kv {
+  width : 100vw;
+  height : 100vh;
+  padding-left : 120px;
+  &__left {
+    width : 50%;
+    border-left : solid 4px $blue01;
+    border-right : solid 4px $blue01;
+    &-high {
+      @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: row,);
+      &-item {
+        width : 286px;
+        height : 250px;
+        background-color : gray;
+        border-bottom : solid 4px $blue01;
+        &:nth-of-type(2n) {
+          border-left : solid 4px $blue01;
+        }
+      }
+    }
+    &-low {
+      width : 100%;
+      height : calc(100vh - 500px);
+      background-color : gray;
+      position : relative;
+      &-inner {
+        width : 332px;
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        transform : translate(-50%, -50%);
+      }
+      &-logo {
+        width : 120px;
+        margin : 0 auto;
+      }
+      &-concept {
+        font-size : 20px;
+        line-height : calc(29/20);
+        letter-spacing: .1em;
+        text-align : center;
+        color : $white00;
+        width : 100%;
+      }
+    }
+  }
+  &__right {
+    width : 50%;
+  }
+}
