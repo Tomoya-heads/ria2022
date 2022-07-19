@@ -1,0 +1,17 @@
+.top-preview-info {
+  & .mod-ttl {
+    width : 656px;
+    margin-left : auto;
+    position: relative;
+    &:before {
+      content : '';
+      width : 100%;
+      height : 100%;
+      background-color : #03283E;
+      opacity : .65;
+      position : absolute;
+      top : 0;
+      left : 0;
+    }
+  }
+}
