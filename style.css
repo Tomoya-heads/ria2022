@@ -1230,8 +1230,9 @@ div.wpcf7-mail-sent-ok {
 /* layout > common
 ============================================================================================================ */
 .common-main {
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  padding-left: 120px;
   padding-bottom: 100px;
 }
 
@@ -1759,6 +1760,11 @@ div.wpcf7-mail-sent-ok {
 
 /*  layout > top
 ============================================================================================================ */
+.archive-gallery__inner {
+  width: 100vh;
+  padding-left: 120px;
+}
+
 /*  layout > container
 ============================================================================================================ */
 .l-container--1000 {
@@ -1781,6 +1787,142 @@ div.wpcf7-mail-sent-ok {
 
 /*  layout > keyvisual
 ============================================================================================================ */
+/*  layout > container
+============================================================================================================ */
+.page-company__intro {
+  font-size: 16px;
+  line-height: calc(37/16);
+  width: 606px;
+  margin: 0 auto;
+}
+
+.page-company__representative-ttl {
+  font-size: 28px;
+  line-height: 1;
+  text-align: center;
+}
+
+.page-company__representative-name {
+  text-align: right;
+  width: 112px;
+  margin-left: auto;
+}
+
+.page-company__team-position {
+  font-size: 24px;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-align: center;
+}
+
+.page-company__team-inner {
+  width: 606px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.page-company__team-left {
+  width: 250px;
+  height: 250px;
+  background-color: gray;
+}
+
+.page-company__team-right {
+  width: 356px;
+}
+
+.page-company__team-excerpt {
+  font-size: 20px;
+  line-height: calc(46/20);
+  width: 220px;
+  margin: 0 auto;
+}
+
+.page-company__team-name {
+  text-align: center;
+}
+
+.page-company__recruit-ttl {
+  font-size: 28px;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-align: center;
+}
+
+.page-company__recruit-inner {
+  position: relative;
+}
+
+.page-company__recruit-left {
+  width: 662px;
+  height: 328px;
+  background-color: gray;
+  position: relative;
+  left: -10px;
+}
+
+.page-company__recruit-left:before {
+  content: "";
+  width: 82px;
+  height: 246px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+}
+
+.page-company__recruit-right {
+  width: 662px;
+  height: 328px;
+  background-color: gray;
+  position: absolute;
+  top: 102px;
+  right: -10px;
+}
+
+.page-company__recruit-txt {
+  width: 420px;
+  margin: 0 auto;
+}
+
+.page-company__group {
+  width: 606px;
+  margin: 0 auto;
+}
+
+.page-company__group-ttl {
+  font-size: 28px;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
+.page-company__group-img {
+  width: 100%;
+  height: 405px;
+  background-color: gray;
+}
+
+.page-company__access-ttl {
+  font-size: 28px;
+  letter-spacing: .1em;
+  text-align: center;
+}
+
 .page-contact__inner {
   max-width: 584px;
   width: 100%;

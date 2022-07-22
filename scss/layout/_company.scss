@@ -1,0 +1,116 @@
+/*  layout > container
+============================================================================================================ */
+
+.page-company{
+	&__intro {
+		font-size : 16px;
+		line-height : calc(37/16);
+		width : 606px;
+		margin : 0 auto;
+	}
+	&__representative {
+		&-ttl {
+			font-size : 28px;
+			line-height : 1;
+			text-align : center;
+		}
+		&-name {
+			text-align : right;
+			width : 112px;
+			margin-left : auto;
+		}
+	}
+	&__team {
+		&-position {
+			font-size : 24px;
+			letter-spacing : .1em;
+			line-height : 1;
+			text-align : center;
+		}
+		&-inner {
+			width : 606px;
+			@include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: row,);
+		}
+		&-left {
+			width : 250px;
+			height : 250px;
+			// 後で消す↓↓↓
+			background-color : gray;
+		}
+		&-right {
+			width : 356px;
+		}
+		&-excerpt {
+			font-size : 20px;
+			line-height : calc(46/20);
+			width : 220px;
+			margin : 0 auto;
+		}
+		&-name {
+			text-align : center;
+		}
+	}
+	// 採用情報
+	&__recruit {
+		&-ttl {
+			font-size : 28px;
+			letter-spacing : .1em;
+			line-height : 1;
+			text-align : center;
+		}
+		&-inner {
+			position : relative;
+		}
+		&-left {
+			width :662px;
+			height : 328px;
+			background-color : gray;
+			position : relative;
+			left : -10px;
+			&:before {
+				content : "";
+				width : 82px;
+				height : 246px;
+				position :absolute;
+				bottom : 0;
+				right : 0;
+				background-color : white;
+			}
+		}
+		&-right {
+			width : 662px;
+			height : 328px;
+			background-color : gray;
+			position : absolute;
+			top : 102px;
+			right : -10px;
+		}
+		&-txt {
+			width : 420px;
+			margin : 0 auto;
+		}
+	}
+	// RIAグループ
+	&__group {
+		width : 606px;
+		margin : 0 auto;
+		&-ttl {
+			font-size : 28px;
+			letter-spacing : .1em;
+			text-align : center;
+		}
+		&-img {
+			width : 100%;
+			height : 405px;
+			background-color :gray;
+		}
+	}
+	// アクセス
+	&__access {
+		&-ttl {
+			font-size : 28px;
+			letter-spacing : .1em;
+			text-align : center;
+		}
+	}
+}

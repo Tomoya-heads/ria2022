@@ -6,8 +6,9 @@ $header_height_sp: size_sp(99);
 
 //Basic 基本
 .common-main{
-  width: 100%;
+  width: 100vw;
   height: 100%;
+  padding-left : 120px;
   padding-bottom: 100px;
 	@include mq_tab {
 	}
