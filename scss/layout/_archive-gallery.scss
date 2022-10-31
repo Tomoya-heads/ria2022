@@ -1,6 +1,327 @@
 .archive-gallery {
-  &__inner {
-    width : 100vh;
-    padding-left : 120px;
+  &__form {
+    width : 626px;
+    margin : 80px auto 0;
+    @include mq_sp{
+      width : size_sp(530);
+      margin-top : size_sp(100);
+    }
+    &-list  {
+      @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: row,);
+      @include mq_sp{
+        flex-direction : column
+      }
+    }
+    &-item {
+      width : 298px;
+      @include flex($display: flex, $wrap: nowrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: row,);
+      @include mq_sp{
+        width : 100%;
+      }
+      &:first-of-type {
+        margin-right : 30px;
+        @include mq_sp{
+          margin-right: 0;
+        }
+      }
+      &:nth-of-type(2) {
+        @include mq_sp{
+          margin-top : size_sp(50);
+        }
+      }
+    }
+    &-left {
+      font-size : 18px;
+      line-height : 1;
+      margin-right : 14px;
+      @include mq_sp{
+        @include fz_vw(30);
+        margin-right: size_sp(28);
+      }
+    }
+    &-right {
+      width : 212px;
+      position : relative;
+      @include mq_sp{
+        width : size_sp(380);
+      }
+      &:before {
+        content : '';
+        width : 20px;
+        height : 14px;
+        background-image: url(./img/common/icn_triangle-gray.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position : absolute;
+        top : 50%;
+        left : 10px;
+        transform : translateY(-50%);
+        z-index: 2;
+        pointer-events: none;
+        @include mq_sp{
+          width : size_sp(32);
+          height : size_sp(23);
+          left : size_sp(20);
+          transform : translateY(-45%);
+        }
+      }
+      & select {
+        width : 100%;
+        padding-left : 44px;
+        display: block;
+        border : solid 1px $gray01;
+        border-radius: 0;
+        cursor : pointer;
+        @include mq_sp{
+          height : size_sp(80);
+          padding-left : size_sp(80);
+          border : solid size_sp(2) $gray01;
+        }
+      }
+    }
+    &-check {
+      font-size : 16px;
+      line-height : 1;
+      margin-top : 34px;
+      @include flex($display: flex, $wrap: nowrap, $justify_c: center, $align_i: stretch, $align_c: stretch, $direction: row,);
+      cursor : pointer;
+      @include mq_sp{
+        @include fz_vw(30);
+        justify-content: flex-start;
+        margin-top : size_sp(48);
+      }
+      &-txt {
+        display : block;
+        padding-top : 6px;
+        margin-right : 14px;
+        @include mq_sp{
+          padding-top : size_sp(15);
+          margin-right : size_sp(42);
+        }
+      }
+      &-input {
+        margin: 0;
+        width: 0;
+        opacity: 0;
+        &:hover {
+          & > .archive-gallery__form-check-dummyInput {
+            background: $white00;
+          }
+        }
+        &:focus {
+          & + .archive-gallery__form-check-dummyInput {
+            background: $white00;
+          }
+        }
+        &:checked {
+          & + .archive-gallery__form-check-dummyInput {
+            background: $black01;
+            border : solid 1px $black01;
+            @include mq_sp{
+              border : solid size_sp(2) $black01;
+            }
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 35%;
+              height: 2px;
+              transform: translate(-5px, 6px) rotateZ(-135deg);
+              transform-origin: 1px 1px;
+              background: #FFFFFF;
+              @include mq_sp{
+                height : size_sp(4);
+                transform : translate(#{size_sp(-8)}, #{size_sp(10)}) rotateZ(-135deg);
+                transform-origin: size_sp(2) size_sp(2);
+              }
+            }
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 70%;
+              height: 2px;
+              transform: translate(-5px, 6px) rotateZ(-45deg);
+              transform-origin: 1px 1px;
+              background: #FFFFFF;
+              @include mq_sp{
+                height : size_sp(4);
+                transform : translate(#{size_sp(-8)}, #{size_sp(10)}) rotateZ(-45deg);
+                transform-origin: size_sp(2) size_sp(2);
+              }
+            }
+          }
+        }
+      }
+      &-dummyInput {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        width : 30px;
+        height : 30px;
+        background: $white00;
+        border : solid 1px $gray01;
+        @include mq_sp{
+          width :size_sp(60);
+          height : size_sp(60);
+          border : solid size_sp(2) $gray01;
+        }
+      }
+    }
+    & .mod-btn {
+      margin : 34px auto 0;
+      @include mq_sp{
+        margin-top : size_sp(60);
+      }
+      & input {
+        width : 100%;
+        padding : 16px 0;
+        display : block;
+        @include mq_sp{
+          padding : size_sp(29) 0 size_sp(28);
+        }
+      }
+    }
+  }
+  &__group {
+    width : 961px;
+    margin : 60px auto 0;
+    @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: flex-start, $align_c: stretch, $direction: row,);
+    @media (max-width: 1163px){
+      width : 627px;
+    }
+    @include mq_sp{
+      width : size_sp(676);
+      margin-top : size_sp(100);
+    }
+  }
+  &__nav {
+    font-size : 13px;
+    font-weight : 700;
+    line-height : 1;
+    width : 553px;
+    height : 34px;
+    margin : 100px auto 0;
+    @include mq_sp{
+      @include fz_vw(22);
+      width : size_sp(687);
+      height : size_sp(54);
+      margin-top : size_sp(100);
+    }
+    & .wp-pagenavi {
+      margin : 0;
+      @include flex($display: flex, $wrap: nowrap, $justify_c: center, $align_i: stretch, $align_c: stretch, $direction: row,);
+    }
+    & .page,.pages,.current,.extend{
+      height : 34px;
+      padding : 9px 13px 7px;
+      display : block;
+      margin-right : 12px;
+      @include mq_sp{
+        height : size_sp(54);
+        margin-right : size_sp(14);
+        padding : size_sp(11) size_sp(17) size_sp(10);
+      }
+    }
+    & .page,.pages,.extend {
+      border : solid 2px $black01;
+      @include mq_sp{
+        border : solid size_sp(3) $black01;
+      }
+    }
+    & .current {
+      color : $white00;
+      background-color : $blue02;
+      border : solid 2px $blue02;
+      @include mq_sp{
+        border : solid size_sp(3) $blue02;
+      }
+    }
+    & .previouspostslink,.nextpostslink,.first,.last {
+      font-size : 0;
+      width :37px;
+      height : 34px;
+      display : block;
+      border : solid 2px $black01;
+      position : relative;
+      margin-right : 12px;
+      @include mq_sp{
+        width : size_sp(49);
+        height : size_sp(54);
+        border : solid size_sp(3) $black01;
+        margin-right : size_sp(14);
+      }
+    }
+    & .last {
+      margin-right : 0;
+    }
+    & .previouspostslink:before,.nextpostslink:before,.first:before,.last:before,.first:after,.last:after {
+      content : '';
+      position : absolute;
+    }
+    & .previouspostslink:before,.nextpostslink:before {
+      width : 8px;
+      height : 18px;
+      background-image : url(./img/archive/icn_arrow-black.svg);
+      background-repeat: no-repeat;
+      background-size : cover;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -50%);
+      @include mq_sp{
+        width : size_sp(13);
+        height : size_sp(28);
+      }
+    }
+    & .nextpostslink:before {
+      transform : rotate(180deg) translate(50%,50%);
+    }
+    & .first:before,.last:before,.first:after,.last:after {
+      width : 8px;
+      height : 18px;
+      background-image : url(./img/archive/icn_arrow-black.svg);
+      background-repeat: no-repeat;
+      background-size : cover;
+      top : 50%;
+      left : 50%;
+      @include mq_sp{
+        width : size_sp(13);
+        height : size_sp(28);
+      }
+    }
+    & .first:before {
+      transform : translate(-100%,-50%);
+      @include mq_sp{
+        transform : translate(-90%,-50%);
+      }
+    }
+    & .first:after {
+      transform : translate(-10%,-50%);
+      @include mq_sp{
+        transform : translate(-25%,-50%);
+      }
+    }
+    & .last:before {
+      transform : rotate(180deg) translate(90%,50%);
+      @include mq_sp{
+        transform : rotate(180deg) translate(75%,50%);
+      }
+    }
+    & .last:after {
+      transform : rotate(180deg) translate(0%,50%);
+      @include mq_sp{
+        transform : rotate(180deg) translate(10%,50%);
+      }
+    }
+    & .extend {
+      &:last-of-type {
+        display : none;
+      }
+    }
   }
 }

@@ -11,6 +11,17 @@
  	@return $length / 750 * 100vw;
  }
 
+ //PC
+@function get_vw_pc($size, $viewport:1280){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw_pc($font_size:32){
+  font-size: $font_size/2 * 1px;
+  font-size: get_vw_pc($font_size);
+}
+//SP
 // 第一引数で基準となる画面幅のフォントサイズ、第二引数で基準となる画面幅を入力
 @function get_vw($size, $viewport:750){
   $rate: 100 / $viewport;

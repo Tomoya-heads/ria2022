@@ -24,6 +24,7 @@ window.WebFontConfig = {
 $(window).on('load',function(){
   $("body").delay(500).queue(function(){
     $(this).addClass('loaded');
+    $('.common-fv').delay(1000).addClass('active');
   })
 });
 
@@ -39,8 +40,10 @@ $(function(){
     if(window.matchMedia('(max-width: 768px)').matches){
       //header_nav.hide();
       header_toggle.on("click",function(){
+        $(".common-overlay").toggleClass("open");
         $(this).toggleClass("open");
-        header_nav.fadeToggle();
+        header_nav.toggleClass("open");
+        $(".common-header__item").removeClass("active");
       })
     }else{
       //header_nav.show();
@@ -58,11 +61,11 @@ $(function(){
 
 //ページトップに戻る
 $(function(){
-  let page_top = $(".common-footer__pageTop");
+  let page_top = $(".common-pageTop");
   let window_height = $(window).height();
   $(window).on("scroll",function(){
     let scroll = $(window).scrollTop() + $(window).height();
-    let footer = $("footer").offset().top;
+    let footer = $(".common-footer__inner").offset().top;
     let scroll_top = $(window).scrollTop();
     if(scroll_top > window_height){
       page_top.fadeIn();
@@ -95,3 +98,61 @@ $(function () {
     return false;
   });
 });
+
+// $(document).ready(function () {
+//   if (window.matchMedia( "(min-width: 768px)" ).matches) {
+//     $(window).on("scroll", function () {
+//       scrollHeight = $(document).height();
+//       scrollPosition = $(window).height() + $(window).scrollTop();
+//       footHeight = $(".common-footer").innerHeight();
+//       if (scrollHeight - scrollPosition <= footHeight) {
+//         $(".common-header").css({ position: "absolute", bottom: footHeight + 0, top:"auto", height:"auto"});
+//       } else {
+//         $(".common-header").css({ position: "fixed", top: "0", bottom : "auto" });
+//       }
+//     });
+//   }
+// });
+
+$(function(){
+  if (window.matchMedia( "(max-width: 768px)" ).matches) {
+    $('.common-header__item:first-of-type,.common-header__item:last-of-type,.common-footer__item:last-of-type').click(function(){
+      $(this).toggleClass('active');
+    });
+  } else {
+    $('.common-header__item:first-of-type,.common-header__item:last-of-type,.common-footer__item:last-of-type').mouseover(function() {
+      $(this).addClass('active');
+      // $('.common-footer__subList').fadeIn();
+    }).mouseout(function() {
+      $(this).removeClass('active');
+      // $('.common-footer__subList').fadeOut();
+    });
+  }
+});
+
+// ヘッダースクロール
+$(function() {
+  let target = $(".common-fv").offset().top;
+  $(window).on("scroll", function() {
+    let currentPos = $(window).scrollTop();
+    if(currentPos > target + 328) {
+      $(".common-header__scroll").addClass("active");
+      $(".common-header__container").addClass("active");
+    } else{
+      $(".common-header__scroll").removeClass("active");
+      $(".common-header__container").removeClass("active");
+    }
+  });
+});
+
+// ローディング画面
+// $(function () {
+//   function end_loader() {
+//     $('.common-loader').fadeOut(400);
+//   }
+//   $(window).on('load', function () {
+//     setTimeout(function () {
+//       end_loader();
+//     }, 2800)
+//   })
+// })

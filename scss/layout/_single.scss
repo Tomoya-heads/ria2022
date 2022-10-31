@@ -1,0 +1,95 @@
+.common-single {
+  &__date {
+    font-size : 16px;
+    font-weight : 500;
+    line-height : 1;
+    color : $gray03;
+    margin-top : 30px;
+    margin-bottom : 20px;
+    @include mq_sp{
+      @include fz_vw(32);
+      margin-top : size_sp(70);
+      margin-bottom : size_sp(32);
+    }
+  }
+  &__thumb {
+    width : 100%;
+    height: 430px;
+    margin-top : 27px;
+    margin-bottom : 27px;
+    @include mq_sp{
+      height : size_sp(445);
+      margin-top : size_sp(57);
+      margin-bottom : size_sp(57);
+    }
+    & img {
+      width : 100%;
+      height : 100%;
+      object-fit: cover;
+    }
+  }
+  &__article {
+    width : 764px;
+    margin : 150px auto 0;
+    @include mq_tab{
+      width : 640px;
+    }
+    @include mq_sp{
+      width : size_sp(690);
+      margin-top : size_sp(158);
+    }
+    &-ttl {
+      font-size : 24px;
+      line-height : 1;
+      letter-spacing: .1em;
+      text-align: center;
+      @include mq_sp{
+        @include fz_vw(34);
+      }
+    }
+    &-group {
+      margin-top : 45px;
+      @include flex(flex, wrap, flex-start, stretch, stretch, row);
+      @include mq_sp{
+        margin-top : size_sp(67);
+        flex-direction: column;
+      }
+      & .loop-post {
+        &:not(:nth-of-type(3n)){
+          margin-right : 40px;
+          @include mq_tab{
+            margin-right : 5%;
+          }
+          @include mq_sp{
+            margin-right : 0;
+          }
+        }
+        &:not(:first-of-type) {
+          @include mq_sp{
+            margin-top : size_sp(68);
+          }
+        }
+      }
+    }
+    &-item {
+      &.other {
+        margin-top : 100px;
+        @include mq_sp{
+          margin-top : size_sp(165);
+        }
+      }
+    }
+  }
+  & .mod-btn {
+    margin : 94px auto 0;
+    &.back {
+      &:before {
+        left : auto;
+        right : 158px;
+        @include mq_sp{
+          right : size_sp(538);
+        }
+      }
+    }
+  }
+}

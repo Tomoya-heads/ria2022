@@ -1,50 +1,915 @@
 .top-kv {
-  width : 100vw;
+  width : 100%;
   height : 100vh;
-  padding-left : 120px;
+  margin-bottom : 150px;
+  position : relative;
+  @include mq_sp{
+    height : 100%;
+    margin-bottom : size_sp(150);
+  }
+  &.active {
+    & .top-kv__left {
+      &:before {
+        background-color : $blue01;
+      }
+      &:after {
+        background-color : $blue01;
+      }
+      &-high {
+        &-inner {
+          position :relative;
+          &:nth-of-type(2n) {
+            & .top-kv__left-high-list {
+              &:after {
+                background-color: $blue01;
+              }
+            }
+          }
+        }
+        &-list {
+          &:before {
+            background-color: $blue01;
+          }
+          &:after {
+            @include mq_sp{
+              background-color : $blue01;
+            }
+          }
+        }
+        &-thumb {
+          &.day {
+            display: none;
+          }
+          &.night {
+            display: block;
+          }
+          &:before {
+            background-color : $blue01;
+            width : 0;
+          }
+        }
+        &-container {
+          opacity : 0;
+          animation: fadeNight .6s ease .8s forwards;
+          @keyframes fadeNight{
+            0%{
+              transform : translateX(-100%);
+              opacity : 0;
+            }
+            100%{
+              transform : translateX(0%);
+              opacity : 1;
+            }
+          }
+        }
+      }
+      &-low {
+        &:before {
+          background-color : rgba(150,150,150,.8);
+        }
+        & .slick-dots {
+          & li {
+            @include mq_sp{
+              border : solid size_sp(2) $white00;
+            }
+            &.slick-active {
+              @include mq_sp{
+                background-color : $white00;
+              }
+            }
+          }
+        }
+        &-concept {
+          color : $white00;
+        }
+        &-scroll {
+          color : $white00;
+          &:before {
+            background-color : $white00;
+          }
+        }
+      }
+    }
+    & .top-kv__right {
+      &-list {
+        &:before {
+          @include mq_sp{
+            background-color : $blue01;
+          }
+        }
+      }
+      &-thumb {
+        &.day {
+          display: none;
+        }
+        &.night {
+          display: block;
+        }
+        &:before {
+          background-color : $blue01;
+          width : 0;
+        }
+      }
+      &-container {
+        opacity : 0;
+        animation: fadeNight .6s ease .8s forwards;
+        @keyframes fadeNight{
+          0%{
+            transform : translateX(-100%);
+            opacity : 0;
+          }
+          100%{
+            opacity : 1;
+            transform : translateX(0);
+          }
+        }
+      }
+    }
+  }
+  &__inner {
+    @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: stretch, $align_c: stretch, $direction: row,);
+    @include mq_sp{
+      align-items: center;
+    }
+  }
   &__left {
     width : 50%;
-    border-left : solid 4px $blue01;
-    border-right : solid 4px $blue01;
+    position : relative;
+    @include mq_sp{
+      width : 100%;
+    }
+    &:before {
+      content : "";
+      width : (4/580)*100%;
+      height : 100%;
+      background-color : $white00;
+      position : absolute;
+      top : 0;
+      left : 0;
+      z-index : 3;
+      transition : .6s;
+      @include mq_sp{
+        display : none;
+      }
+    }
+    &:after {
+      content : "";
+      width : (4/580)*100%;
+      height : 100%;
+      background-color : $white00;
+      position : absolute;
+      top : 0;
+      right : (-2/580)*100%;
+      z-index : 3;
+      transition : .6s;
+      @include mq_sp{
+        display : none;
+      }
+    }
     &-high {
       @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: row,);
-      &-item {
-        width : 286px;
-        height : 250px;
-        background-color : gray;
-        border-bottom : solid 4px $blue01;
+      position : relative;
+      &:hover {
+        & a {
+          opacity : 1;
+        }
+      }
+      &-inner {
+        width : 50%;
+        // height : 50%;
+        // height : 250px;
+        position : relative;
+        @include mq_sp{
+          height : size_sp(323);
+        }
         &:nth-of-type(2n) {
-          border-left : solid 4px $blue01;
+          & .top-kv__left-high-list {
+            &:after {
+              content: "";
+              width : (4/290)*100%;
+              height : 100%;
+              background-color: $white00;
+              position : absolute;
+              top : 0;
+              left : (-2/290)*100%;
+              z-index: 3;
+              transition : .6s;
+              @include mq_sp{
+                width : size_sp(6);
+                left : auto;
+                right : size_sp(-2);
+              }
+            }
+          }
+        }
+        &:last-of-type {
+          & .top-kv__left-high-list  {
+            &:after {
+              @include mq_sp{
+                display : none;
+              }
+            }
+          }
+        }
+        &.second {
+          @include mq_sp{
+            width : 100%;
+          }
+          & .top-kv__left-high-list  {
+            @include mq_sp{
+              width : 50%;
+            }
+          }
+          & .top-kv__left-high-thumb {
+            &:before {
+              animation: slideIn .6s ease forwards;
+            }
+          }
+        }
+        &.third {
+          @include mq_sp{
+            width : 100%;
+          }
+          & .top-kv__left-high-list  {
+            @include mq_sp{
+              width : 50%;
+            }
+          }
+          & .top-kv__left-high-thumb {
+            &:before {
+              animation: slideIn .6s ease .2s forwards;
+            }
+          }
+        }
+        &.fourth {
+          & .top-kv__left-high-thumb {
+            &:before {
+              animation: slideIn .6s ease .3s forwards;
+            }
+          }
+        }
+        &.fifth {
+          & .top-kv__left-high-thumb {
+            &:before {
+              animation: slideIn .6s ease .5s forwards;
+              @include mq_sp{
+                animation: slideIn .6s ease .5s forwards;
+              }
+            }
+          }
+        }
+        & a {
+          width : 100%;
+          height : 100%;
+          display: block;
+        }
+      }
+      &-list {
+        position : relative;
+        &:before {
+          content : "";
+          width : 100%;
+          height : (4/250)*100%;
+          background-color: $white00;
+          position : absolute;
+          left : 0;
+          bottom : (-2/250)*100%;
+          z-index: 3;
+          transition : .6s;
+          @include mq_sp{
+            height : size_sp(6);
+            bottom : size_sp(-2);
+          }
+        }
+        &:after {
+          @include mq_sp{
+            content: "";
+            width : size_sp(6);
+            height : 100%;
+            background-color: $white00;
+            position : absolute;
+            top : 0;
+            right : size_sp(-2);
+            z-index: 3;
+            transition : .6s;
+          }
+        }
+      }
+      &-thumb {
+        height : 250px;
+        position : relative;
+        transition : .6s;
+        @include mq_sp{
+          height : size_sp(323);
+        }
+        &.day {
+          display : block;
+        }
+        &.night {
+          display : none;
+        }
+        &:before {
+          content : "";
+          width : 100%;
+          height : 100%;
+          background-color : $white00;
+          position : absolute;
+          top : 0;
+          right : 0;
+          // animation: slideIn .6s ease forwards;
+          z-index : 3;
+          @keyframes slideIn{
+            0%{
+              width : 100%;
+            }
+            100%{
+              width: 0;
+            }
+          }
+        }
+        &:after {
+          content : "";
+          width : 100%;
+          height : 95px;
+          background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.5)80%);
+          position : absolute;
+          left : 0;
+          bottom : 0;
+          pointer-events: none;
+          z-index : 1;
+          @include mq_sp{
+            height : size_sp(171);
+          } 
+        }
+        &:nth-of-type(2) {
+          &:before {
+            transition-delay: .2s;
+          }
+        }
+      }
+      &-container {
+        font-weight : 700;
+        text-align : right;
+        color : $white00;
+        position : absolute;
+        right : 11px;
+        bottom : 13px;
+        opacity : 0;
+        animation: fadeDay .6s ease .8s forwards;
+        z-index: 2;
+        @include mq_sp{
+          right : size_sp(21);
+          bottom : size_sp(21);
+        }
+        @keyframes fadeDay{
+          0%{
+            transform : translateX(-100%);
+            opacity : 0;
+          }
+          100%{
+            transform : translateX(0);
+            opacity : 1;
+          }
+        }
+      }
+      &-ttl {
+        font-size : 18px;
+        line-height : (39/18);
+        @include mq_sp{
+          @include fz_vw(32);
+          line-height : calc(46/32);
+        }
+      }
+      &-location {
+        font-size : 13px;
+        line-height : 1;
+        @include mq_sp{
+          @include fz_vw(22);
+          line-height : calc(32/22);
+          margin-top : 4px;
+        }
+      }
+      &-date {
+        font-size : 14px;
+        line-height : 1;
+        margin-top : 8px;
+        @include mq_sp{
+          @include fz_vw(22);
+          margin-top : size_sp(14);
         }
       }
     }
     &-low {
       width : 100%;
       height : calc(100vh - 500px);
-      background-color : gray;
       position : relative;
+      @include mq_sp{
+        height : size_sp(388);
+      }
+      &:before {
+        content : "";
+        width : 100%;
+        height : 100%;
+        background-color : rgba(255,255,255,.8);
+        position : absolute;
+        top : 0;
+        left : 0;
+        z-index: 1;
+        transition : .6s;
+        pointer-events: none;
+      }
+      &-list {
+        &.slick-dotted.slick-slider {
+          margin-bottom : 0;
+        }
+        & .slick-dots {
+          display :none !important;
+          @include mq_sp{
+            width : size_sp(152);
+            display: block;
+            left : size_sp(28);
+            bottom : size_sp(18);
+            display: block !important;
+            z-index : 3;
+          }
+          & li {
+            @include mq_sp{
+              width : size_sp(16);
+              height : size_sp(16);
+              border : solid size_sp(2) $black01;
+              margin : 0;
+              transition : .6s;
+            }
+            &.slick-active {
+              @include mq_sp{
+                background-color: $black01;
+                transition : .6s;
+              }
+            }
+            &:not(:last-of-type) {
+              @include mq_sp{
+                margin-right : size_sp(18) !important;
+              }
+            }
+            & button {
+              @include mq_sp{
+                width : 100%;
+                height : 100%;
+                padding : 0;
+              }
+              &:before {
+                @include mq_sp{
+                  content : '';
+                  font-size : 0;
+                  width : 100%;
+                  height : 100%;
+                  color : $white00;
+                  opacity : 1;
+                }
+              }
+            }
+          }
+        }
+      }
+      &-thumb {
+        height : calc(100vh - 500px);
+        @include mq_sp{
+          height : size_sp(388);
+        }
+        &.day {
+          display: block;
+        }
+        &.night {
+          display: none;
+        }
+      }
       &-inner {
-        width : 332px;
+        width : 100%;
         position : absolute;
         top : 50%;
         left : 50%;
         transform : translate(-50%, -50%);
+        z-index : 3;
+        pointer-events: none;
       }
       &-logo {
         width : 120px;
         margin : 0 auto;
+        @include mq_sp{
+          width : size_sp(144);
+        }
       }
       &-concept {
         font-size : 20px;
         line-height : calc(29/20);
         letter-spacing: .1em;
         text-align : center;
-        color : $white00;
+        color : $black01;
         width : 100%;
+        margin-top : 24px;
+        transition: .6s;
+        @include mq_sp{
+          @include fz_vw(30);
+          line-height : (44/30);
+          margin-top : size_sp(26);
+        }
+      }
+      &-scroll {
+        @include mq_sp{
+          @include fz_vw(28);
+          display: block;
+          position: absolute;
+          right: size_sp(-5);
+          bottom: size_sp(167);
+          transform: rotate(90deg);
+          //transform-origin: left bottom;
+          line-height: (28/19);
+          letter-spacing: 0.2em;
+          font-weight: bold;
+          color: $black01;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 1;
+          transition : .6s;
+        }
+        &.active {
+          opacity : 0;
+        }
+        &:before{
+          @include mq_sp{
+            content: "";
+            width: size_sp(120);
+            height: size_sp(2);
+            background: $black01;
+            position: absolute;
+            top: 50%;
+            $vw_12: size_sp(12);
+            left: calc(100% + #{$vw_12});
+            transform: translateY(-50%);
+            animation: pathmove 2s cubic-bezier(1, 0, 0, 1) infinite;
+            transition : .6s;
+            z-index: 1;
+          }
+        }
+        @keyframes pathmove {
+          0% {
+            transform: translateY(-50%) scaleX(0);
+            transform-origin: 0 0;
+          }
+          30% {
+            transform: translateY(-50%) scaleX(1);
+            transform-origin: 0 0;
+          }
+          30.1% {
+            transform: translateY(-50%) scaleX(1);
+            transform-origin: 100% 0;
+          }
+          100% {
+            transform: translateY(-50%) scaleX(0);
+            transform-origin: 100% 0;
+          }
+        }
       }
     }
   }
   &__right {
     width : 50%;
+    height : 100vh;
+    @include mq_sp{
+      height : size_sp(646);
+      position : absolute;
+      top : 0;
+      right : 0;
+    }
+    &:hover {
+      & a {
+        opacity : 1;
+      }
+    }
+    &-list {
+      width : 100%;
+      height : 100%;
+      position : relative;
+      &.day {
+        display: block;
+      }
+      &.night {
+        display: none;
+      }
+      &:before {
+        @include mq_sp{
+          content : "";
+          width : 100%;
+          height : size_sp(6);
+          background-color : $white00;
+          position : absolute;
+          left : 0;
+          bottom : 0;
+          z-index : 3;
+          transition : .6s;
+          @include mq_sp{
+            bottom : size_sp(-2);
+          }
+        }
+      }
+      &.slick-dotted.slick-slider {
+        margin-bottom : 0;
+      }
+      & .slick-dots {
+        width : 124px;
+        position : absolute;
+        left : 20px;
+        bottom : 6px;
+        z-index : 4;
+        @include mq_sp{
+          display : none !important;
+        }
+        & li {
+          width : 12px;
+          height : 12px;
+          border : solid 2px $white00;
+          margin : 0;
+          &.slick-active {
+            background-color: $white00;
+          }
+          &:not(:last-of-type) {
+            margin-right : 16px !important;
+          }
+          & button {
+            width : 100%;
+            height : 100%;
+            padding : 0;
+            &:before {
+              content : '';
+              font-size : 0;
+              width : 100%;
+              height : 100%;
+              color : $white00;
+              opacity : 1;
+            }
+          }
+        }
+      }
+    }
+    &-item {
+      width : 100%;
+      position: relative;
+      & a {
+        width : 100%;
+        height : 100%;
+        display: block;
+      }
+    }
+    &-thumb {
+      width : 100%;
+      height : 100vh;
+      @include mq_sp{
+        height : size_sp(646);
+      }
+      &.day {
+        display: block;
+      }
+      &.night {
+        display: none;
+      }
+      &:before {
+        content : "";
+        width : 100%;
+        height : 100%;
+        background-color : $white00;
+        position : absolute;
+        top : 0;
+        right : 0;
+        animation: slideIn .8s ease .6s forwards;
+        z-index : 3;
+        @include mq_sp{
+          animation: slideIn .6s ease .4s forwards;
+        }
+        @keyframes slideIn{
+          0%{
+            width : 100%;
+          }
+          100%{
+            width: 0;
+          }
+        }
+      }
+      &:after {
+        content : "";
+        width : 100%;
+        height : 162px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.5)80%);
+        position : absolute;
+        left : 0;
+        bottom : 0;
+        pointer-events: none;
+        z-index : 1;
+        @include mq_sp{
+          height : size_sp(201);
+        } 
+      }
+    }
+    &-container {
+      font-weight : 700;
+      text-align : right;
+      color : $white00;
+      position :absolute;
+      right : 12px;
+      bottom : 15px;
+      opacity : 0;
+      animation: fadeDay .6s ease .8s forwards;
+      z-index : 1;
+      @include mq_sp{
+        width : size_sp(332);
+        right : size_sp(21);
+        bottom : size_sp(21);
+      }
+      @keyframes fadeDay{
+        0%{
+          transform : translateX(-100%);
+          opacity : 0;
+        }
+        100%{
+          transform : translateX(0);
+          opacity : 1;
+        }
+      }
+    }
+    &-ttl {
+      font-size : 26px;
+      line-height : calc(56/26);
+      @include mq_sp{
+        @include fz_vw(40);
+        line-height : (58/40);
+      }
+    }
+    &-location{
+      font-size : 20px;
+      line-height : 1;
+      margin-top : 3px;
+      @include mq_sp{
+        @include fz_vw(28);
+        line-height : calc(40/28);
+        margin-top : size_sp(8);
+      }
+    }
+    &-date {
+      font-size : 20px;
+      line-height : 1;
+      margin-top : 12px;
+      @include mq_sp{
+        @include fz_vw(28);
+      }
+    }
+  }
+  &__btn {
+    color : $black01;
+    width : 110px;
+    height : 154px;
+    background-color : rgba(255,255,255,.6);
+    // border-radius: 50%;
+    // border : solid 2px $yellow01;
+    position : absolute;
+    top : 0;
+    right : 0;
+    transition : .6s;
+    cursor : pointer;
+    @include mq_sp{
+      width : size_sp(140);
+      height : size_sp(194);
+    }
+    &.clicked {
+      & .top-kv__btn-item {
+        &.night{
+          opacity: 0;
+        }
+        &.day{
+          opacity: 1;
+        }
+      }
+      & .top-kv__btn-circle {
+        &:before {
+          border : solid 5px $red01;
+          @include mq_sp{
+            border : solid size_sp(6) $red01;
+          }
+        }
+        &-inner {
+          & circle {
+            stroke : $red01;
+          }
+        }
+      }
+    }
+    &-item {
+      font-weight : 500;
+      width : 100%;
+      position : absolute;
+      top : 18px;
+      left : 50%;
+      transform : translateX(-50%);
+      transition : .6s;
+      @include mq_sp{
+        top : size_sp(16);
+      }
+      &.night {
+        opacity : 1;
+      }
+      &.day {
+        opacity : 0;
+      }
+    }
+    &-circle {
+      font-size : 17px;
+      line-height: 1;
+      text-align: center;
+      width : 75px;
+      height : 75px;
+      margin : 0 auto;
+      transition : .6s;
+      position : relative;
+      @include mq_sp{
+        @include fz_vw(24);
+        width : size_sp(86);
+        height : size_sp(86);
+      }
+      &-inner {
+        position : absolute;
+        top : 0;
+        left : 0;
+        display : none;
+        &.circle01 {
+          & circle {
+            animation: circle01 2s infinite cubic-bezier(.6, 0, 0, 1); /* keyframes名 速さ 繰り返し 開始までの間隔 */
+          }
+        }
+        &.circle02 {
+          & circle {
+            animation: circle02 2s infinite cubic-bezier(.6, 0, 0, 1); /* keyframes名 速さ 繰り返し 開始までの間隔 */
+            transform: scaleX(-1) rotate(180deg);
+          }
+        }
+        &.active {
+          display: block;
+        }
+        @keyframes circle01 {
+          0% { stroke-dasharray: 0 345; }
+          100%, to { stroke-dasharray: 345 345;}
+        }
+        @keyframes circle02 {
+          0% { stroke-dasharray: 345 345; }
+          100%, to { stroke-dasharray: 0 345;}
+        }
+        & svg {
+          width : 100%;
+          height : 100%;
+          transform: rotate(-90deg);
+        }
+        & circle {
+          fill: transparent;
+          stroke: $yellow01;
+          stroke-width: 5px;
+          transform-origin: center;
+          @include mq_sp{
+            stroke-width : 6px;
+          }
+        }
+      }
+      // &:before {
+      //   content : "";
+      //   width : 100%;
+      //   height : 100%;
+      //   border-radius: 50%;
+      //   border : solid 5px $yellow01;
+      //   position : absolute;
+      //   top : 0;
+      //   left : 0;
+      //   transition : .6s;
+      //   @include mq_sp{
+      //     border : solid size_sp(6) $yellow01;
+      //   }
+      // }
+
+      & span {
+        width : 100%;
+        height : 100%;
+        @include flex($display: flex, $wrap: wrap, $justify_c: center, $align_i: center, $align_c: stretch, $direction: row,);
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        transform : translate(-50%, -50%);
+      }
+    }
+    &-txt {
+      font-size : 12px;
+      line-height : (17/12);
+      text-align : center;
+      margin-top : 7px;
+      @include mq_sp{
+        @include fz_vw(20);
+        line-height : (29/20);
+        margin-top : size_sp(12);
+      }
+    }
   }
 }

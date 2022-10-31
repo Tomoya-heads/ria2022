@@ -26,3 +26,237 @@
     opacity: 1;
   }
 }
+
+.mod-btn {
+  font-size : 16px;
+  font-weight : 500;
+  line-height : 1;
+  text-align : center;
+  width : 180px;
+  border : solid 2px $black01;
+  position : relative;
+  transition : .6s;
+  @include mq_sp{
+    @include fz_vw(26);
+    width : size_sp(370);
+    border : solid size_sp(3) $black01;
+  }
+  &:hover {
+    opacity : 1;
+    color : $black01;
+    background-color : rgba(255,255,255,.5);
+    border : solid 2px $blue02;
+    @include mq_sp{
+      border : solid size_sp(3) $blue02;
+    }
+    &:before {
+      // width : 60px;
+      background-color: $blue02;
+      animation: delete .2s linear forwards, extend .2s  .4s linear forwards;
+      @include mq_sp{
+        animation : none;
+      }
+      @keyframes delete {
+        0% {
+          opacity :1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes extend {
+        0% {
+          opacity: 1;
+          width : 0;
+        }
+        100% {
+          opacity: 1;
+          width : 60px;
+        }
+      }
+    }
+    & a {
+      opacity : 1;
+    }
+  }
+  &:before {
+    content : "";
+    width : 60px;
+    height : 2px;
+    background-color : $black01;
+    position : absolute;
+    top : 50%;
+    left : 158px;
+    transition : .6s;
+    @include mq_sp{
+      width : size_sp(90);
+      height : size_sp(3);
+      left : size_sp(337);
+    }
+  }
+  & a {
+    padding : 16px 0;
+    display : block;
+    @include mq_sp{
+      padding : size_sp(29) 0 size_sp(28);
+    }
+  }
+}
+
+.common-banner {
+  color : $white00;
+  width : 606px;
+  margin : 0 auto;
+  position : relative;
+  @include mq_sp{
+    width : size_sp(600);
+  }
+  & a {
+    display : block;
+    &:hover {
+      opacity: 1;
+      & .mod-btn {
+        color : $black01;
+        background-color : rgba(255,255,255,.5);
+        border : solid 2px $blue02;
+        @include mq_sp{
+          border : solid size_sp(3) $blue02;
+        }
+        &:before {
+          background-color: $blue02;
+          animation: delete .2s linear forwards, extend .2s  .4s linear forwards;
+          @include mq_sp{
+            animation : none;
+          }
+          @keyframes delete {
+            0% {
+              opacity :1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          @keyframes extend {
+            0% {
+              opacity: 1;
+              width : 0;
+            }
+            100% {
+              opacity: 1;
+              width : 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    &:before {
+      opacity : 0;
+    }
+  }
+  &:before {
+    content : "";
+    width : 100%;
+    height : 100%;
+    background-color : rgba(3, 40, 52, .55);
+    position : absolute;
+    top : 0;
+    left : 0;
+    pointer-events: none;
+    z-index: 1;
+    transition : .6s;
+  }
+  &:after {
+    content : "";
+    width : calc(100% - 35px);
+    height : calc(100% - 35px);
+    border : solid 5px $white00;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+    @include mq_sp{
+      width : calc(100% - #{size_sp(35)});
+      height : calc(100% - #{size_sp(35)});
+      border : solid size_sp(5) $white00;
+    }
+  }
+  &__inner {
+    width : 100%;
+    position : absolute;
+    top : 50%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    z-index : 2;
+  }
+  &__high {
+    font-size : 20px;
+    line-height : (29/20);
+    letter-spacing : .1em;
+    text-align : center;
+    @include mq_sp{
+      @include fz_vw(22);
+      line-height : (32/22);
+    }
+  }
+  &__low {
+    font-size : 30px;
+    line-height : (44/30);
+    letter-spacing: .1em;
+    text-align: center;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height: (44/30);
+    }
+  }
+}
+
+.common-pageTop{
+  width : 41px;
+  height : 41px;
+  position: fixed;
+  right: 0;
+  bottom: 43px;
+  z-index: 99;
+  cursor: pointer;
+  @include mq_sp{
+    display : none !important;
+  }
+  &:before{
+    content: "";
+    width: 27px;
+    height: 15px;
+    background: url(./img/common/icn_arrow-top.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    @include mq_sp{
+      width: size_sp(74);
+      height: size_sp(63);
+    }
+  }
+  &:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color : $blue02;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index : 0;
+    pointer-events: none;
+  }
+  &.is-stop{
+    position: absolute;
+    bottom: 573px;
+  }
+}

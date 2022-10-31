@@ -13,8 +13,8 @@ body {
 	font-weight: $base-font-weight;
 	position: relative;
 	-webkit-print-color-adjust: exact;
-	overflow-x: hidden;
-	-ms-overflow-style: none;    /* IE, Edge 対応 */
+	// overflow-x: hidden;
+	// -ms-overflow-style: none;    /* IE, Edge 対応 */
 	scrollbar-width: none;       /* Firefox 対応 */
   @include mq_sp {
     @include fz_vw($base-font-size-sp);
@@ -34,6 +34,15 @@ body{
     pointer-events: auto;
     transition: opacity 1s;
   }
+}
+
+// =============================================================
+// フォント設定
+// =============================================================
+
+.font-serif {
+  font-family: $base-font-family-serif;
+  font-weight : 600;
 }
 
 
@@ -59,10 +68,11 @@ a {
   background: $base-bg-color;
   min-height: 100vh;
   height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: calc(-100vh - 736px) auto 0;
+  // overflow: hidden;
   @include mq_sp {
     border: none;
+    margin : 0 auto;
   }
 }
 
@@ -80,6 +90,13 @@ img.object_fit{
   height: 100%;
   object-fit: cover;
   font-family: 'object-fit: cover;'
+}
+img.object_contain{
+  width: auto;
+  height: 100%;
+  margin : 0 auto;
+  object-fit: contain;
+  font-family: 'object-fit: contain;'
 }
 
 // =============================================================

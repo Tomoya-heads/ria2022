@@ -1,1 +1,79 @@
-.archive__main{}
+.common-archive{
+  &__list {
+    width : 610px;
+    margin : 79px auto 0;
+    @include flex(flex, wrap, flex-start, center, normal, row);
+    @include mq_sp{
+      width :size_sp(630);
+      margin-top : size_sp(98.5);
+      justify-content: center;
+    }
+  }
+  &__item {
+    font-size : 15px;
+    line-height : 1;
+    text-align : center;
+    border : solid 2px $blue02;
+    opacity : 0.5;
+    @include mq_sp{
+      @include fz_vw(30);
+      border : solid size_sp(3) $blue02;
+    }
+    & a {
+      display: block;
+      padding : 6px 8px 7px;
+      @include mq_sp{
+        padding : size_sp(14) size_sp(22);
+      }
+    }
+    &.current {
+      opacity : 1;
+    }
+    &:not(:last-of-type) {
+      margin-right : 20px;
+      @include mq_sp{
+        margin-right : size_sp(0);
+      }
+    }
+    &:not(:nth-of-type(3n)) {
+      @include mq_sp{
+        margin-right : size_sp(27);
+      }
+    }
+    &:nth-of-type(n + 4) {
+      @include mq_sp{
+        margin-top : size_sp(37);
+      }
+    }
+  }
+  &__inner {
+    width : 766px;
+    margin : 59px auto 0;
+    @include flex(flex, wrap, flex-start, stretch, normal, row);
+    @include mq_tab{
+      width : 640px;
+    }
+    @include mq_sp{
+      width : size_sp(690);
+      margin-top : size_sp(73.5);
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &__btn {
+    width : 180px;
+    margin : 54px auto 0;
+    text-align : center;
+    @include mq_sp{
+      width : size_sp(370);
+      margin-top :size_sp(100);
+    }
+    & .mod-btn {
+      padding : 16px 0;
+      cursor: pointer;
+      @include mq_sp{
+        padding : size_sp(29) 0 size_sp(28);
+      }
+    }
+  }
+}

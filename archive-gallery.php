@@ -5,63 +5,67 @@ $pageName="archive-gallery";
 
 <section class="<?php echo $pageName;?>">
   <div class="<?php echo $pageName;?>__inner">
-    <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-    <!-- 都道府県 -->
-      <div>都道府県</div>
-      <select name="<?php echo $pageName;?>__">
-        <option value="">指定なし</option>
-        <?php
-        $terms = get_terms('prefecture', 'hide_empty=0');
-        foreach ($terms as $term) :
-          $prefecture_name = $term->name;
-          $prefecture_slug = $term->slug;
-        ?>
-          <option value="<?php echo esc_attr($prefecture_slug); ?>"><?php echo esc_html($prefecture_name); ?></option>
-        <?php
-        endforeach;
-        ?>
-      </select>
-      <!-- 内装特徴 -->
-      <div>内装特徴</div>
-      <select name="<?php echo $pageName;?>__">
-        <option value="">指定なし</option>
-        <?php
-        $terms = get_terms('interior', 'hide_empty=0');
-        foreach ($terms as $term) :
-          $interior_name = $term->name;
-          $interior_slug = $term->slug;
-        ?>
-          <option value="<?php echo esc_attr($interior_slug); ?>"><?php echo esc_html($interior_name); ?></option>
-        <?php
-        endforeach;
-        ?>
-      </select>
 
-      <input type="hidden" name="s" value="<?php the_search_query(); ?>">
-      <input type="submit" value="検索する">
-    </form>
+  <!-- 絞り込み検索 -->
+    <?php get_template_part('/search-form'); ?>
 
+    <div class="<?php echo $pageName;?>__group">
     <?php
-      $args = [
-        'post_type' => 'gallery', // カスタム投稿名が「gourmet」の場合
-        'posts_per_page' => 5, // 表示する数
-      ];
+      if( is_mobile() ){
+        $num = 8;
+      } else {
+        $num = 9;
+      }
+      $selected_terms = $_GET['gallery_prefecture,gallery_interior'];
+      if($selected_terms) {
+        // 絞り込み条件を追加
+        $taxquery_taxonomy = array(
+          'taxonomy' => 'interior',
+          'terms' => $selected_terms, //取得したパラメーター（＝各タームのスラッグ）が入る
+          'field' => 'slug',
+          'operator' => 'AND', //タームの条件を指定（AND/IN/NOT IN）
+        );
+      }
+      $paged = get_query_var('paged')? get_query_var('paged') : 1;
+      $args = array(
+        'paged' => $paged,
+        'post_type' => 'gallery',
+        'posts_per_page' => $num,
+        's' => get_search_query(),
+        'meta_key' => '物件公開番号',
+        'orderby' => 'meta_value_num',
+        'tax_query' => array(
+          'relation' => 'AND',
+          $taxquery_taxonomy,
+        ),
+        'meta_query' => array(
+          array(
+            'key'	=>	'ギャラリーに公開',
+            'value'	=>	'する',
+            'compare'	=>	'='
+          )
+        )
+      );
       $my_query = new WP_Query($args);
-    ?>
-    <?php if ($my_query->have_posts()): // 投稿がある場合?>
-    <ul>
-      <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+      if ($my_query->have_posts()): while ($my_query->have_posts()) : $my_query->the_post();
+      ?>
+      <?php
+      // フィールド名areaを取得
+      $area = get_post_meta($post->ID,"ギャラリーに公開",true);
+      ?>
       <!-- ▽ ループ開始 ▽ -->
-      <li>
-        <h3><?php the_title(); ?></h3>
-      </li>
+      <?php //if($area === 'する'): ?>
+      <?php get_template_part('content/loop/gallery');?>
+      <?php //endif;?>
       <!-- △ ループ終了 △ -->
       <?php endwhile; ?>
-    </ul>
     <?php else: // 投稿がない場合?>
-      <p>まだ投稿がありません。</p>
+      <p>まだ物件がありません。</p>
     <?php endif; wp_reset_postdata(); ?>
-
+    </div>
+    <div class="<?php echo $pageName;?>__nav">
+      <?php if(function_exists('wp_pagenavi')) wp_pagenavi(array('query' => $my_query)); ?>
+    </div>
   </div>
 </section>
 

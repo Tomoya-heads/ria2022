@@ -1,58 +1,99 @@
 .editor-content {
+	width : 648px;
+  margin : 71px auto 0;
+	@include mq_tab{
+		width : 580px;
+	}
+	@include mq_sp{
+		width : size_sp(670);
+		margin-top : size_sp(90);
+	}
 	h1 {
-    @include font-size(36);
-		margin-top: 40px;
-		margin-bottom: 40px;
+		font-size : 22px;
+		line-height : (51/22);
+		letter-spacing: .1em;
+		margin-top: 30px;
+		margin-bottom : 30px;
     @include mq_sp{
-      @include fz_vw(50);
-      margin-top: size_sp(40);
-      margin-bottom: size_sp(40);
+      @include fz_vw(36);
+			line-height : (74/36);
+      margin-top: size_sp(70);
+			margin-bottom : size_sp(70);
     }
 	}
 	h2 {
-    @include font-size(30);
-		margin-top: 40px;
-		margin-bottom: 40px;
+		font-size : 20px;
+		line-height : (46/20);
+		letter-spacing: .1em;
+		margin-top: 32px;
+		margin-bottom: 32px;
     @include mq_sp{
-      @include fz_vw(44);
-      margin-top: size_sp(40);
-      margin-bottom: size_sp(40);
+      @include fz_vw(32);
+			line-height : (66/32);
+      margin-top: size_sp(49);
+      margin-bottom: size_sp(49);
     }
 	}
 	h3 {
-    @include font-size(28);
-		margin-top: 40px;
-		margin-bottom: 40px;
+		font-size : 20px;
+		line-height : (40/20);
+		letter-spacing: .1em;
+		color : $white00;
+		background-color : $black01;
+		padding-left : 7px;
+		margin-top: 32px;
+		margin-bottom: 32px;
     @include mq_sp{
-      @include fz_vw(40);
-      margin-top: size_sp(40);
-      margin-bottom: size_sp(40);
+      @include fz_vw(32);
+			line-height : (46/32);
+			padding : size_sp(7) size_sp(0) size_sp(4) size_sp(10);
+      margin-top: size_sp(49);
+      margin-bottom: size_sp(49);
     }
   }
 	h4 {
-    @include font-size(24);
-		margin-top: 20px;
-		margin-bottom: 20px;
+		font-size : 18px;
+		line-height : (40/18);
+		letter-spacing: .1em;
+		padding-left : 7px;
+		margin-top: 32px;
+		margin-bottom: 32px;
+		border-bottom : solid 1px $black01;
     @include mq_sp{
-      @include fz_vw(36);
-      margin-top: size_sp(20);
-      margin-bottom: size_sp(20);
+      @include fz_vw(32);
+			line-height : (46/32);
+			padding-left : size_sp(10);
+      margin-top: size_sp(49);
+      margin-bottom: size_sp(49);
+			border-bottom : solid size_sp(1) $black01;
     }
 	}
 	h5 {
-    @include font-size(22);
-		margin-top: 20px;
-		margin-bottom: 20px;
+		font-size : 18px;
+		line-height : (40/18);
+		letter-spacing: .1em;
+		padding-left : 7px;
+		margin-top: 32px;
+		margin-bottom: 32px;
+		background-image: linear-gradient(to right, $black01, $black01 5px, transparent 5px);
+		background-size: 10px 1px;
+		background-position: left bottom;
+		background-repeat: repeat-x;
     @include mq_sp{
       @include fz_vw(32);
-      margin-top: size_sp(20);
-      margin-bottom: size_sp(20);
+			line-height : (46/32);
+			padding-left : size_sp(10);
+      margin-top: size_sp(49);
+      margin-bottom: size_sp(49);
+			background-image: linear-gradient(to right, $black01, $black01 size_sp(8), transparent size_sp(8));
+			background-size: size_sp(16) size_sp(1);
+	
     }
 	}
 	h6 {
     @include font-size(20);
-		margin-top: 20px;
-		margin-bottom: 20px;
+		margin-top: 32px;
+		margin-bottom: 32px;
     @include mq_sp{
       @include fz_vw(30);
       margin-top: size_sp(20);
@@ -60,14 +101,26 @@
     }
 	}
   p{
-    @include font-size(18);
+		font-size : 16px;
+		line-height : (37/16);
     @include mq_sp{
-      @include fz_vw(28);
+      @include fz_vw(30);
+			line-height : (62/30);
+			width : size_sp(650);
+			margin : 0 auto;
     }
     strong{
       font-weight: normal;
     }
   }
+	img {
+		width : 100%;
+		height : 430px;
+		object-fit: cover;
+		@include mq_sp{
+			height : size_sp(445);
+		}
+	}
 	table {
 		width: 100%;
 		border: 1px solid #eee;
@@ -86,8 +139,14 @@
 		}
 	}
 	ul, ul li {
+		font-size : 16px;
+		line-height : (37/16);
 		list-style: disc;
 		margin-left: 10px;
+		@include mq_sp{
+			@include fz_vw(30);
+			line-height : (62/30);
+		}	
 	}
 	ol, ol li {
 		list-style: decimal;
@@ -98,14 +157,23 @@
     text-decoration: underline;
 	}
 	blockquote {
-		background: #eee;
-		padding: 20px;
-    border-radius: 0 30px 30px 0;
-		border-left: 5px solid $black00;
+		font-size : 16px;
+		line-height : (37/16);
+		background: $white00;
+		width : 615px;
+		padding: 22px 28px;
+		margin : 40px auto;
+		border: 1px solid $gray04;
     @include mq_sp{
-      padding: size_sp(20);
-      border-radius: 0 size_sp(30) size_sp(30) 0;
+			@include fz_vw(30);
+			line-height : (62/30);
+			width : size_sp(630);
+      padding: size_sp(30) size_sp(40);
+			margin : size_sp(70) auto;
     }
+		& p {
+			width : 100%;
+		}
 		cite {
 			text-align: right;
 			margin-top: 20px;

@@ -12,3 +12,329 @@
 		&--ttl{}
 	}
 }
+ 
+// 共通タイトル
+.mod-ttl {
+  width : 668px;
+  height : 410px;
+  position : relative;
+  @include mq_tab{
+    width : 558px;
+  }
+  @include mq_sp{
+    width : size_sp(525);
+    height : size_sp(375);
+  }
+  &.left {
+    &:before {
+      right : -0.6px;
+      @include mq_sp{
+        right : size_sp(-0.6);
+      }
+    }
+    & .mod-ttl {
+      &__ttl {
+        right : 50%;
+        transform : translateX(96%);
+        @include mq_tab{
+          transform : translateX(65%);
+        }
+        @include mq_sp{
+          transform : translateX(31%);
+
+        }
+      }
+      &__subTtl {
+        right : -0.6px;
+        @include mq_sp{
+          right : size_sp(-0.6);
+        }
+        &:before {
+          right : -0.6px;
+          @include mq_sp{
+            right : size_sp(0);
+          }
+        }
+        &-inner {
+          left : 10px;
+          @include mq_sp{
+            left : size_sp(10);
+          }
+        }
+      }
+      &__line{
+        right : 82px;
+        @include mq_sp{
+          right : size_sp(75);
+        }
+        &:before {
+          right : 0;
+        }
+        &:after {
+          left : 0;
+        }
+      }
+      &__bg {
+        right : -0.6px;
+        @include mq_sp{
+          right : size_sp(-0.6);
+        }
+        &:before {
+          left :-82px;
+          @include mq_sp{
+            left : size_sp(-75);
+          }
+        }
+        &:after {
+          left :-82px;
+          @include mq_sp{
+            left : size_sp(-75);
+          }
+        }
+      }
+    }
+  }
+  &.right {
+    margin-left : auto;
+    &:before {
+      left : -0.6px;
+      @include mq_sp{
+        left : size_sp(-0.6);
+      }
+    }
+    & .mod-ttl {
+      &__ttl {
+        left : 50%;
+        transform : translateX(-85%);
+        @include mq_tab{
+          transform : translateX(-65%);
+        }
+        @include mq_sp{
+          transform : translateX(-34%);
+        }
+      }
+      &__subTtl {
+        left : -0.6px;
+        @include mq_sp{
+          left : size_sp(-0.6);
+        }
+        &:before {
+          left : -0.6px;
+          @include mq_sp{
+            left : size_sp(-0.6);
+          }
+        }
+        &-inner {
+          right : 10px;
+          @include mq_sp{
+            right : size_sp(10);
+          }
+        }
+      }
+      &__line{
+        left : 82px;
+        @include mq_sp{
+          left : size_sp(75);
+        }
+        &:before {
+          left : 0;
+        }
+        &:after {
+          right : 0;
+        }
+      }
+      &__bg {
+        left : -0.6px;
+        @include mq_sp{
+          left : size_sp(-0.6);
+        }
+        &:before {
+          right :-82px;
+          @include mq_sp{
+            right : size_sp(-75);
+          }
+        }
+        &:after {
+          right :-82px;
+          @include mq_sp{
+            right : size_sp(-75);
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    & .mod-ttl {
+      &__line {
+        &:before {
+          width : 100%;
+        }
+        &:after {
+          height : 100%;
+        }
+      }
+      &__bg {
+        opacity: 0;
+        &:before {
+          opacity: 0;
+        }
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &:before {
+    content : "";
+    width : 410.5px;
+    height : 82.5px;
+    background-color : $white00;
+    position : absolute;
+    top : -0.6px;
+    z-index : 2;
+    @include mq_sp{
+      width : size_sp(450.5);
+      height : size_sp(75.5);
+      top : size_sp(-0.5);
+    }
+  }
+  &:after {
+    content : "";
+    width : 100%;
+    height : 100%;
+    background-color : rgba(3,40,62,.55);
+    position : absolute;
+    top : 0;
+    left : 0;
+    z-index: 0;
+  }
+  &__ttl {
+    font-size : 30px;
+    line-height : 1;
+    letter-spacing: .1em;
+    color : $white00;
+    position : absolute;
+    top : 209px;
+    z-index : 2;
+    @include mq_tab{
+      font-size : 24px;
+    }
+    @include mq_sp{
+      @include fz_vw(34);
+      top : size_sp(184);
+    }
+  }
+  &__subTtl {
+    font-size : 20px;
+    line-height : 1;
+    color : $blue01;
+    background-color : $white00;
+    width : 328.5px;
+    height : 83.5px;
+    position: absolute;
+    bottom : -0.5px;
+    z-index : 3;
+    @include mq_sp{
+      @include fz_vw(26);
+      width : size_sp(375);
+      height : size_sp(76.5);
+      bottom : size_sp(-0.6);
+    }
+    &:before {
+      content : "";
+      width : 83px;
+      height : 164.5px;
+      background-color : $white00;
+      position : absolute;
+      top : -246px;
+      @include mq_sp{
+        width : size_sp(75.7);
+        height : size_sp(151.5);
+        top : size_sp(-224.6);
+      }
+    }
+    &-inner {
+      position : absolute;
+      top : 15px;
+      @include mq_sp{
+        white-space: nowrap;
+        top : size_sp(16);
+      }
+    }
+  }
+  &__line {
+    width : 411.5px;
+    height : 247.5px;
+    position : absolute;
+    bottom : 0;
+    z-index : 3;
+    @include mq_sp{
+      width : size_sp(376.5);
+      height : size_sp(226.5);
+    }
+    &:before {
+      content : "";
+      width : 0;
+      height : 3px;
+      background-color : $white00;
+      position : absolute;
+      top : 0;
+      transition-duration: .4s;
+      transition-delay: .6s;
+      @include mq_sp{
+        height : size_sp(3);
+      }
+    }
+    &:after {
+      content : "";
+      width : 3px;
+      height : 0;
+      background-color : $white00;
+      position : absolute;
+      top : 0;
+      transition-duration: .4s;
+      transition-delay: 1.2s;
+      @include mq_sp{
+        width : size_sp(3);
+      }
+    }
+  }
+  &__bg {
+    width : 82.5px;
+    height : 82.5px;
+    background-color : $white00;
+    position : absolute;
+    top : 245px;
+    z-index : 3;
+    transition-duration: .4s;
+    transition-delay: 1.2s;
+    @include mq_sp{
+      width : size_sp(75.5);
+      height : size_sp(75.5);
+      top : size_sp(225);
+    }
+    &:before {
+      content : "";
+      width : 100%;
+      height : 100%;
+      background-color : $white00;
+      position : absolute;
+      top : -82px;
+      transition-duration: .4s;
+      transition-delay: .6s;
+      @include mq_sp{
+        top : size_sp(-75);
+      }
+    }
+    &:after {
+      content : "";
+      width : 100%;
+      height : 100%;
+      background-color : $white00;
+      position : absolute;
+      bottom : 0;
+      transition-duration: .4s;
+      transition-delay: .9s;
+    }
+  }
+}

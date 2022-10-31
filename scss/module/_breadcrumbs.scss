@@ -1,5 +1,111 @@
 /*  module > breadcrumbs
 ============================================================================================================ */
 
-.modules__breadcrumbs{}
+.mod-breadcrumbs{
+  @include mq_sp{
+    width : 100%;
+    color : $white00;
+    background-color : rgba(10,113,173,.5);
+    padding : size_sp(20) 0 size_sp(18);
+  }
+  &__list {
+    font-size : 10px;
+    line-height : calc(15/10);
+    font-weight : 500;
+    width : 88px;
+    margin : 0 auto;
+    @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: center, $align_c: stretch, $direction: column,);
+    position : relative;
+    @include mq_sp{
+      @include fz_vw(25);
+      line-height : calc(37/26);
+      width : size_sp(710);
+      flex-wrap :nowrap;
+      white-space: nowrap;
+      flex-direction: row;
+      overflow-x: scroll;
+    }
+  }
+  &__item {
+    padding-left : 15px;
+    width : 100%;
+    display : block;
+    position : relative;
+    @include mq_sp{
+      display: inline-block;
+      padding-left : size_sp(32);
+      width : auto;
+    }
+    &:not(:first-of-type) {
+      margin-top : 10px;
+      @include mq_sp{
+        margin-top : 0;
+      }
+    }
+    &:not(:last-of-type) {
+      @include mq_sp{
+        margin-right : size_sp(50);
+      }
+      &:after {
+        content : "";
+        width : 1px;
+        height : 160%;
+        background-color : $white00;
+        position : absolute;
+        top : 5px;
+        left : 4px;
+        z-index : -1;
+        @include mq_sp{
+          width : size_sp(30);
+          height : size_sp(3);
+          top : 50%;
+          transform : translateY(-50%);
+          left : auto;
+          right : size_sp(-40);
+          z-index : 3;
+        }
+      }
+    }
+    &:last-of-type {
+      &:before {
+        background-color : $red01;
+      }
+      & a {
+        opacity : 1;
+      }
+    }
+    &:before {
+      content : "";
+      width : 10px;
+      height : 10px;
+      background-color : $blue06;
+      position : absolute;
+      top : 4px;
+      left : 0;
+      @include mq_sp{
+        width : size_sp(20);
+        height : size_sp(20);
+        background-color : $white00;
+        top : size_sp(8);
+      }
+    }
+    & a {
+      opacity : .7;
+      display : block;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      @include mq_sp{
+        opacity : 1;
+      }
+    }
+    & span {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+}
 

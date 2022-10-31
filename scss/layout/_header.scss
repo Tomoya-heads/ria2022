@@ -8,70 +8,68 @@
 
 .common-header{
   width: 120px;
-  height : 100vh;
-  background-image: url(./img/common/bg_header.svg);
+  height : calc(100vh + 736px);
+  // background-image: url(./img/common/bg_header.svg);
   background-size : cover;
   background-repeat : no-repeat;
   color: $white00;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
+  background-color: #03283E;
   color: $white00;
-  transition: 0.5s;
   @include mq_sp{
-    height: $header_height_sp;
+    width : 100%;
+    height: size_sp(100);
+    position : fixed;
   }
-  &.open{
-    background: $black00;
-  }
-  &.is-active{
-    background: $black00;
-    box-shadow: 0 3px 6px rgba($black00,0.1);
+  &.active{
+    & .common-header__inner {
+      background: linear-gradient(to bottom, $blue01 80%, $blue02);
+      @include mq_sp{
+        background: linear-gradient(to right, $blue01 80%, $blue02);
+      }
+    }
   }
   &__inner{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, $blue02 80%, $blue01);
     margin: 0 auto;
+    transition : .6s;
     @include mq_tab{}
-    @include mq_sp{}
+    @include mq_sp{
+      height : 100%;
+      background: linear-gradient(to right, $blue02 80%, $blue01);
+    }
   }
   &__logo{
     width : 74.5px;
     margin : 0 auto;
-    padding : 12px 0 27px;
-    @include mq_tab{
-    }
-    @media screen and (max-width: 900px) {
-      @include abso-center();
-    }
+    padding : 20px 0 27px;
     @include mq_sp{
-      width: size_sp(200);
+      width: size_sp(74.5);
+      padding : size_sp(19) 0 0;
     }
     a{
       display: block;
       position: relative;
       width: 100%;
-      @include mq_sp{
-      }
+    }
+    & img {
+      display : block;
     }
   }
   &__toggle{
-    @include abso-center-v();
-    display: none;
-    width: 54px;
-    height: 45px;
-    left: 27px;
-    cursor: pointer;
-    @media screen and (max-width: 900px) {
-      display: block;
-    }
     @include mq_sp{
       display: block;
-      width: size_sp(54);
+      width: size_sp(57);
       height: size_sp(45);
-      left: size_sp(27);
+      @include abso-center-v();
+      left: size_sp(30);
+      cursor: pointer;
     }
     &.open{
       span{
@@ -89,17 +87,13 @@
       }
     }
     span{
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: $white00;
-      transition: 0.5s;
-      @media screen and (max-width: 900px) {
-        display: block;
-      }
       @include mq_sp{
-        height: size_sp(3);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: size_sp(4);
+        background: $white00;
+        transition: 0.5s;
       }
       &:first-of-type{
         top: 0;
@@ -116,54 +110,338 @@
   &__nav{
     font-size : 12px;
     font-weight : 700;
-    letter-spacing : .1em;
     text-align : center;
-    width : 80px;
-    margin : 0 auto;
-  }
-  &__menu{
-    width: 100%;
-    @media screen and (max-width: 900px) {
-      display: block;
-      flex-wrap: wrap;
-    }
+    width : 160px;
+    position : absolute;
+    top : 109px;
+    left : 50%;
+    transform : translateX(-50%);
     @include mq_sp{
+      @include fz_vw(26);
+      width : size_sp(270);
+      height : calc(100vh - #{size_sp(100)});
+      background-color : rgba(10,113,173,.9);
+      top : size_sp(100);
+      left : 0;
+      transform : translateX(-100%);
+      transition : .6s;
     }
-    & li {
-      position : relative;
-      &:not(:first-of-type) {
-        margin-top : 22px;
+    &.open {
+      transform : translateX(0);
+    }
+  }
+  &__list{
+    width: 100%;
+    @include mq_sp{
+      text-align : left;
+      width : size_sp(160);
+      margin : size_sp(42) auto 0;
+    }
+  }
+  &__item {
+    width : 72px;
+    margin : 0 auto;
+    position : relative;
+    white-space: nowrap;
+    @include mq_sp{
+      width : 100%;
+    }
+    &:not(:first-of-type) {
+      margin-top : 18px;
+      @include mq_sp{
+        margin-top : size_sp(33);
       }
-      &:first-of-type {
-        &:before {
-          background-image : url(./img/common/icn_arrow-white.svg);
-        }
-      }
-      &:last-of-type {
-        &:before {
-          background-image : url(./img/common/icn_arrow-white.svg);
-
-        }
-      }
-      &:nth-last-of-type(2) {
-        &:before {
-          background-image : url(./img/common/icn_arrow-white.svg);
-        }
+    }
+    &:first-of-type {
+      text-align: left;
+      width : 116px;
+      padding-left : 12px;
+      margin-left : auto;
+      margin-right : 0;
+      @include mq_sp{
+        width : 100%;
+        padding-left : 0;
       }
       &:before {
         content : "";
-        width  : 16px;
-        height : 8px;
-        background-size : cover;
-        background-repeat : no-repeat;
-        position : absolute;
-        left : 50%;
-        bottom : -10px;
-        transform : translateX(-50%);
+        width : 30px;
+        height : 2px;
+        background-color : $white00;
+        top : 50%;
+        left : 66px;
+        transform : translateY(-50%);
+        @include mq_sp{
+          width : size_sp(91);
+          height : size_sp(4);
+          left : size_sp(124);
+        }
+      }
+      & .common-header__subList {
+        width : 208px;
+        transition-duration : 0.4s;
+        transition-delay : 0s;
+        @include mq_sp{
+          width : size_sp(450);
+        }
+      }
+    }
+    &:last-of-type {
+      text-align: left;
+      width : 116px;
+      margin-left : auto;
+      margin-right : 0;
+      @include mq_sp{
+        width : 100%;
+      }
+      &:before {
+        content : "";
+        width : 18px;
+        height : 2px;
+        background-color : $white00;
+        top : 50%;
+        left : 78px;
+        transform : translateY(-50%);
+        @include mq_sp{
+          width : size_sp(39);
+          height : size_sp(4);
+          left : size_sp(176);
+        }
+      }
+      & .common-header__subList {
+        width : 244px;
+        transition-duration : 0.4s;
+        transition-delay : 0s;
+        @include mq_sp{
+          width : size_sp(450);
+        }
+      }
+    }
+    &:before {
+      content : "";
+      width  : 16px;
+      height : 8px;
+      background-size : cover;
+      background-repeat : no-repeat;
+      position : absolute;
+      top : 50%;
+      left : -10px;
+      transform : translateX(-50%);
+      transition-duration : 0.4s;
+      transition-delay: 0.4s;
+      @include mq_sp{
+        transition-delay: 0s;
       }
     }
     & a {
       display : block;
+    }
+    &.active {
+      & .common-header__subList {
+        transition-delay: 0.4s;
+        transition-duration: 0.4s;
+        opacity: 1;
+        pointer-events: all;
+      }
+      &:first-of-type {
+        &:before {
+          width : 50px;
+          transition-duration : .4s;
+          transition-delay: 0s;
+          @include mq_sp{
+            width : size_sp(121);
+          }
+        }
+      }
+      &:last-of-type {
+        &:before {
+          width : 38px;
+          transition-duration : .4s;
+          transition-delay: 0s;
+          @include mq_sp{
+            width : size_sp(69);
+          }
+        }
+      }
+    }
+    &.current {
+      &:nth-of-type(2) {
+        &:after {
+          left : -12px;
+          @include mq_sp{
+            left : size_sp(-40);
+          }
+        }
+      }
+      &:last-of-type {
+        &:after {
+          left : -18px;
+          @include mq_sp{
+            left : size_sp(-40);
+          }
+        }
+      }
+      &:after {
+        content : "";
+        width : 9px;
+        height : 13px;
+        background-image : url(./img/common/icn_sign-red.svg);
+        background-size : cover;
+        background-repeat : no-repeat;
+        position : absolute;
+        top : 50%;
+        left : -6px;
+        transform : translateY(-50%);
+        @include mq_sp{
+          width : size_sp(19);
+          height : size_sp(28);
+          left : size_sp(-40);
+          transform : translateY(-45%);
+        }
+      }
+      }
+  }
+  &__subList {
+    font-size : 12px;
+    font-weight : 500;
+    line-height : (17/12);
+    color : $white00;
+    background-color : $blue02;
+    opacity: 0;
+    padding : 14px;
+    position : absolute;
+    top : -17px;
+    left : 116px;
+    transition-duration : 0.4s;
+    transition-delay : 0.4s;
+    pointer-events: none;
+    @include mq_sp{
+      @include fz_vw(26);
+      line-height : (37/26);
+      width : size_sp(450);
+      padding : size_sp(30);
+      top : size_sp(-22);
+      left : size_sp(245);
+    }
+  }
+  &__subItem {
+    &:not(:first-of-type) {
+      margin-top: 20px;
+      @include mq_sp{
+        margin-top : size_sp(40);
+      }
+    }
+    & a {
+      display: block;
+    }
+  }
+  &__container {
+    position : absolute;
+    left : 50%;
+    bottom : 20px;
+    transform : translateX(-50%);
+    opacity : 0;
+    transition : .6s;
+    pointer-events: none;
+    @include mq_sp{
+      display : none;
+    }
+    &.active {
+      opacity : 1;
+      pointer-events: all;
+    }
+  }
+  &__btn {
+    font-size : 11px;
+    font-weight : 700;
+    line-height : (16/11);
+    text-align: center;
+    width : 98px;
+    margin : 25px auto 0;
+    @include mq_sp{
+      @include fz_vw(24);
+      line-height : (35/24);
+      width : size_sp(210);
+      position : absolute;
+      left : 50%;
+      transform : translateX(-50%);
+      bottom : size_sp(50);
+    }
+    &-item {
+      border : solid 2px $white00;
+      position : relative;
+      @include mq_sp{
+        border : solid size_sp(4) $white00;
+      }
+      &:not(:first-of-type) {
+        margin-top  : 14px;
+        @include mq_sp{
+          margin-top : size_sp(40);
+        }
+      }
+      &:last-of-type {
+        & a {
+          padding : 17px 0;
+          @include mq_sp{
+            padding : size_sp(37) 0;
+          }
+        }
+      }
+      &:hover {
+        &:before {
+          // width : 21px;
+          // @include mq_sp{
+          //   width : size_sp(50);
+          // }
+          animation: headerDelete .2s linear forwards, headerExtend .2s  .4s linear forwards;
+          @include mq_sp{
+            animation: none;
+          }
+          @keyframes headerDelete {
+            0% {
+              opacity :1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          @keyframes headerExtend {
+            0% {
+              opacity: 1;
+              width : 0;
+            }
+            100% {
+              opacity: 1;
+              width : 21px;
+            }
+          }
+        }
+        & a {
+          opacity: 1;
+        }
+      }
+      &:before {
+        content : "";
+        width : 21px;
+        height : 2px;
+        background-color : $white00;
+        position : absolute;
+        top : 50%;
+        left : 86px;
+        transform : translateY(-50%);
+        transition : .6s;
+        @include mq_sp{
+          width : size_sp(50);
+          height : size_sp(4);
+          left : size_sp(186);
+        }
+      }
+      & a {
+        padding : 9px 0;
+        display: block;
+        @include mq_sp{
+          padding : size_sp(20) 0;
+        }
+      }
     }
   }
   &__scroll {
@@ -179,11 +457,14 @@
     font-weight: bold;
     color: $white00;
     z-index: 2;
+    pointer-events: none;
+    opacity: 1;
+    transition : .6s;
     @include mq_sp{
-      @include fz_vw(28);
-      line-height: (42/28);
-      left: size_sp(-20);
-      bottom: size_sp(139);
+      display :none;
+    }
+    &.active {
+      opacity : 0;
     }
     &:before{
       content: "";

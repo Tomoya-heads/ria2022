@@ -1,50 +1,49 @@
 .page-404{
-  padding: 92px 0 0;
-  @include mq_sp{
-    padding: size_sp(132) 0 0;
-  }
-  h2{
-    @include font-size(30);
+  &__inner {
+    width : 489px;
+    margin : 107px auto 0;
     text-align: center;
-    line-height: 1;
-    color: $black00;
-    margin-bottom: 24px;
     @include mq_sp{
-      @include fz_vw(44);
-      margin-bottom: size_sp(47);
+      width : size_sp(629);
+      margin-top : size_sp(38);
     }
   }
-  h3{
-    @include font-size(22);
-    text-align: center;
-    color: $black00;
-    line-height: 1;
-    margin-bottom: 31px;
+  &__en {
+    font-size : 30px;
+    font-weight : 300;
+    line-height : 1;
+    @include mq_sp{
+      @include fz_vw(50);
+    }
+  }
+  &__ja {
+    font-size : 22px;
+    line-height : (32/22);
+    font-weight : 300;
+    margin-top : 27px;
     @include mq_sp{
       @include fz_vw(38);
-      line-height: (65/38);
-      margin-bottom: size_sp(70);
+      line-height : (78/38);
+      margin-top : size_sp(50);
     }
   }
-  &__icn{
-    max-width: 155px;
-    margin: 0 auto 21px;
+  &__logo {
+    width : 172px;
+    margin : 41px auto 0;
     @include mq_sp{
-      max-width: size_sp(258);
-      margin-bottom: size_sp(54);
+      width : size_sp(288);
+      margin-top : size_sp(57);
     }
   }
-  &__info{
-    @include font-size(14);
-    max-width: 489px;
-    margin: 0 auto;
+  &__txt {
+    font-size : 16px;
+    line-height : (37/16);
+    text-align : left;
+    margin-top : 33px;
     @include mq_sp{
       @include fz_vw(30);
-      max-width: size_sp(629);
-    }
-    a{
-      text-decoration: underline;
-      text-underline-offset: 1px;
+      line-height : (62/30);
+      margin-top : size_sp(62);
     }
   }
 }
