@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="750" viewBox="0 0 120 750">
-  <defs>
-    <linearGradient id="linear-gradient" x1="0.5" y1="0.84" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#0a71ad"/>
-      <stop offset="1" stop-color="#03283e"/>
-    </linearGradient>
-  </defs>
-  <rect id="スクリーンショット_2020-09-07_17.56.01" data-name="スクリーンショット 2020-09-07 17.56.01" width="120" height="750" fill="url(#linear-gradient)"/>
-</svg>

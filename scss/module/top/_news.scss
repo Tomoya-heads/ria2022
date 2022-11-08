@@ -1,0 +1,45 @@
+.top-news {
+  margin-top : 383px;
+  padding-bottom : 492px;
+  position : relative;
+  @include mq_sp{
+    margin-top : size_sp(375);
+    padding-bottom : size_sp(375);
+  }
+  &__inner {
+    width : 764px;
+    margin : 82px auto 0;
+    @include mq_tab{
+      width : 640px;
+    }
+    @include mq_sp{
+      width : size_sp(690);
+      margin-top : size_sp(75);
+    }
+    & .mod-btn {
+      margin : 54px auto 0;
+      @include mq_sp{
+        margin-top : size_sp(92);
+      }
+    }
+  }
+  &__list {
+    @include flex(flex, nowrap, flex-start, stretch, normal, row);
+    @include mq_sp{
+      flex-direction: column;
+    }
+    & .loop-post {
+      &:not(:nth-of-type(3n)) {
+        margin-right : 40px;
+        @include mq_sp{
+          margin-right : 0;
+        }
+      }
+      &:not(:first-of-type) {
+        @include mq_sp{
+          margin-top : size_sp(67);
+        }
+      }
+    }
+  }
+}

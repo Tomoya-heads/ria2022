@@ -1,0 +1,355 @@
+.top-preview {
+  margin-top : 150px;
+  padding-bottom : 536px;
+  position : relative;
+  @include mq_sp{
+    margin-top : size_sp(150);
+    padding-bottom : size_sp(434);
+  }
+  &__list {
+    // width : 100%;
+    margin : 82px auto 0;
+    position : relative;
+    @include mq_sp{
+      margin-top : size_sp(150);
+    }
+    &.slick-slider {
+      margin-bottom : 0 !important;
+    }
+    & .slick {
+      &-arrow {
+        width : 42px;
+        height : 42px;
+        border : solid 2px $black01;
+        position : absolute;
+        top : auto;
+        left : 50%;
+        bottom  : 0;
+        z-index: 3;
+        @include mq_tab{
+          width : 33px;
+          height : 33px;
+        }
+        @include mq_sp{
+          width : size_sp(75);
+          height : size_sp(75);
+          border : solid size_sp(4) $black01;
+          left : auto;
+        }
+        &:before {
+          content : "";
+          width : 10px;
+          height : 20px;
+          background-image : url(./img/top/icn_arrow-slider-black.svg);
+          background-size : cover;
+          background-repeat: no-repeat;
+          position : absolute;
+          top : 50%;
+          left : 50%;
+          transform : translate(-50%, -50%);
+          opacity : 1;
+          @include mq_tab{
+            width : 8px;
+            height : 16px;
+          }
+          @include mq_sp{
+            width : size_sp(20);
+            height : size_sp(40);
+            background-image : url(./img/page/icn_arrow-slider-black.svg);
+          }
+        }
+      }
+      &-prev {
+        transform: translateX(780%);
+        @include mq_tab{
+          transform: translateX(728%);
+        }
+        @include mq_sp{
+          left : size_sp(75);
+          bottom : size_sp(150);
+          transform: translateX(0);
+        }
+      }
+      &-next {
+        transform: translateX(876%);
+        @include mq_tab{
+          transform: translateX(822%);
+        }
+        @include mq_sp{
+          right : size_sp(75);
+          top : size_sp(150);
+          transform: translateX(0);
+        }
+        &:before {
+          transform :rotate(180deg) translate(50%, 50%);
+        }
+      }
+    }
+    & .slick-dots {
+      width : auto;
+      position : absolute;
+      left : 50%;
+      bottom : -46px;
+      z-index : 4;
+      transform : translate(-50%);
+      @include mq_sp{
+        // width : size_sp(190);
+        bottom : size_sp(-67);
+      }
+      & li {
+        width : 14px;
+        height : 14px;
+        border : solid 2px $blue02;
+        margin : 0;
+        @include mq_sp{
+          width : size_sp(22);
+          height : size_sp(22);
+          border : solid size_sp(3) $blue02;
+        }
+        &.slick-active {
+          background-color: $blue02;
+        }
+        &:only-child {
+          display: none;
+        }
+        &:not(:last-of-type) {
+          margin-right : 16px !important;
+          @include mq_sp{
+            margin-right : size_sp(20) !important;
+          }
+        }
+        & button {
+          width : 100%;
+          height : 100%;
+          padding : 0;
+          &:before {
+            content : '';
+            font-size : 0;
+            width : 100%;
+            height : 100%;
+            color : $blue02;
+            opacity : 1;
+          }
+        }
+      }
+    }
+  }
+  &__item {
+    width : 820px;
+    margin : 0 21px;
+    @include mq_tab{
+      width : 608px;
+    }
+    @include mq_sp{
+      width : size_sp(600);
+      margin : 0 size_sp(37.5);
+    }
+  }
+  &__container {
+    width : 656px;
+    margin : 0 auto;
+    background-color : $blue07;
+    @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: stretch, $align_c: stretch, $direction: row,);
+    position : relative;
+    @include mq_tab{
+      width :480px;
+    }
+    @include mq_sp{
+      width : size_sp(450);
+      height : size_sp(825);
+      flex-direction : column;
+    }
+    &:before {
+      content : "";
+      width : 82px;
+      height: 164px;
+      background-color : $blue07;
+      position : absolute;
+      left : -82px;
+      bottom : 0;
+      @include mq_tab{
+        width : 64px;
+        height : 128px;
+        left : -64px;
+      }
+      @include mq_sp{
+        width : size_sp(75);
+        height : size_sp(150);
+        left : size_sp(-75);
+      }
+    }
+    &:after {
+      content : "";
+      width : 82px;
+      height: 82px;
+      background-color : $blue07;
+      position : absolute;
+      top : 0;
+      right : -82px;
+      @include mq_tab{
+        width : 64px;
+        height : 64px;
+        right : -64px;
+      }
+      @include mq_sp{
+        width : size_sp(75);
+        height : size_sp(150);
+        right : size_sp(-75);
+      }
+    }
+  }
+  &__left {
+    width : 369px;
+    height : 246px;
+    margin-right : 20px;
+    @include mq_tab{
+      width : 260px;
+      height : 180px;
+    }
+    @include mq_sp{
+      width : 100%;
+      height : size_sp(300);
+      margin-right : 0;
+    }
+    & img {
+      width : 100%;
+      height : 100%;
+      object-fit : cover;
+    }
+  }
+  &__right {
+    position : relative;
+    @include mq_sp{
+      width : 100%;
+      height : size_sp(375);
+    }
+    &-inner {
+      width : 248px;
+      @include mq_tab{
+        width : 200px
+      }
+      @include mq_sp{
+        width : size_sp(400);
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        transform : translate(-50%, -49%);
+      }
+    }
+  }
+  &__name {
+    font-size : 16px;
+    font-weight : 700;
+    line-height : (28/16);
+    margin-top : 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @include mq_tab{
+      font-size : 14px;
+      line-height : 1.75;
+      margin-top : 10px;
+    }
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (53/30);
+      margin-top : 0;
+    }
+  }
+  &__address {
+    font-size : 13px;
+    line-height : 1;
+    text-align : center;
+    margin-top : 11px;
+    @include mq_tab{
+      font-size : 12px;
+      margin-top : 4px;
+    }
+    @include mq_sp{
+      @include fz_vw(24);
+      margin-top : size_sp(24);
+    }
+  }
+  &__day {
+    font-size : 15px;
+    font-weight : 500;
+    line-height : (32/15);
+    text-align: center;
+    margin-top : 12px;
+    @include mq_tab{
+      font-size : 13px;
+      line-height : 2.1;
+      margin-top : 4px;
+    }
+    @include mq_sp{
+      @include fz_vw(28);
+      line-height : (56/28);
+      margin-top : size_sp(34);
+    }
+  }
+  & .mod-btn {
+    font-size : 14px;
+    width : 192px;
+    position : absolute;
+    right : 51px;
+    bottom : 20px;
+    @include mq_tab{
+      transform : scale(.7);
+      right : 4px;
+      bottom : 2px;
+    }
+    @include mq_sp{
+      @include fz_vw(26);
+      width : size_sp(370);
+      left : 50%;
+      right : auto;
+      transform : translateX(-50%) scale(1);
+      bottom : size_sp(31);
+    }
+    & a {
+      padding : 13px 0;
+      @include mq_sp{
+        padding : size_sp(29) 0 size_sp(28);
+      }
+    }
+    &:before {
+      width : 40px;
+      left : 170px;
+      @include mq_sp{
+        width : size_sp(80);
+        left : size_sp(327);
+      }
+    }
+    &:hover {
+      // width: 40px;
+      // @include mq_sp{
+      //   width : size_sp(80);
+      // }
+      &:before {
+        animation: previewDelete .2s linear forwards, previewExtend .2s  .4s linear forwards;
+        @include mq_sp{
+          animation : none;
+        }
+        @keyframes previewDelete {
+            0% {
+              opacity :1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          @keyframes previewExtend {
+            0% {
+              opacity: 1;
+              width : 0;
+            }
+            100% {
+              opacity: 1;
+              width : 40px;
+            }
+          }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.page-reservation {
+  &__inner {
+    width : 606px;
+    margin : 74px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(91);
+    }
+  }
+  &__intro {
+    font-size : 16px;
+    line-height : (37/16);
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+    }
+  }
+  &__note {
+    font-size : 12px;
+    line-height : 1;
+    display : block;
+    margin : 66px 0 27px;
+    @include mq_sp{
+      @include fz_vw(28);
+      margin : size_sp(76) 0 size_sp(60);
+    }
+  }
+}
+
+.page.confirm {
+  & .page-reservation__intro {
+    text-align : center;
+  }
+}
+.page.thanks {
+  & .page-reservation {
+    &__inner {
+      width : 628px;
+      @include mq_sp{
+        width : size_sp(596);
+      }
+    }
+    &__thanksLogo {
+      width : 336px;
+      margin : 0 auto;
+      @include mq_sp{
+        width : size_sp(336);
+      }
+    }
+    &__intro {
+      font-size : 16px;
+      line-height : (37/16);
+      text-align : center;
+      margin-top : 54px;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        margin-top : size_sp(66);
+      }
+    }
+    & .mod-btn {
+      width : 372px;
+      margin : 53px auto;
+      @include mq_sp{
+        width : size_sp(370);
+        margin-top : size_sp(92);
+      }
+      &.back {
+        &:before {
+          left : auto;
+          right : 350px;
+          @include mq_sp{
+            right : size_sp(337);
+          }
+        }
+      }
+    }
+  }
+}

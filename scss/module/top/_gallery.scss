@@ -1,0 +1,419 @@
+.top-gallery {
+  &__inner {
+    margin-top : 35px;
+    @include mq_sp{
+      margin-top :size_sp(66);
+    }
+  }
+  &__ttl {
+    font-size : 28px;
+    line-height : 1;
+    letter-spacing: .1em;
+    text-align : center;
+    @include mq_sp{
+      @include fz_vw(34);
+    }
+  }
+  &__txt {
+    font-size : 16px;
+    line-height : calc(37/16);
+    width : 606px;
+    margin : 0 auto;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+      width : size_sp(600);
+    }
+  }
+  & .common-gallery {
+    margin-top : 53px;
+    @include mq_sp{
+      margin-top : size_sp(66);
+    }
+  }
+  // モデルルーム見学会
+  &__model {
+    width : 606px;
+    margin : 156px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(158);
+    }
+    &-txt {
+      font-size : 16px;
+      line-height : (37/16);
+      margin-top : 60px;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        margin-top : size_sp(73);
+      }
+    }
+    &-list {
+      margin-top : 53px;
+      @include mq_sp{
+        margin-top : size_sp(66);
+      }
+    }
+    &-item {
+      @include flex(flex, nowrap, space-between, center, normal, row);
+      @include mq_sp{
+        flex-direction: column;
+      }
+      &:not(:first-of-type) {
+        margin-top : 60px;
+        @include mq_sp{
+          margin-top : size_sp(150);
+        }
+      }
+      &:first-of-type {
+        & .top-gallery__model {
+          &-left {
+            &:before {
+              content : "名古屋";
+            }
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        & .top-gallery__model {
+          &-left {
+            &:before {
+              content : "横　浜";
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        & .top-gallery__model {
+          &-left {
+            &:before {
+              content : "大　阪";
+            }
+          }
+        }
+      }
+    }
+    &-left {
+      width : 303px;
+      height : 227px;
+      position :relative;
+      @include mq_sp{
+        width : 100%;
+        height : size_sp(400);
+      }
+      &:before {
+        font-size : 15px;
+        font-weight: 700;
+        line-height : 1;
+        text-align : center;
+        width : 69px;
+        height : 69px;
+        padding : 27px 0;
+        background-color : $white00;
+        position : absolute;
+        top : 0;
+        left : 0;
+        @include mq_sp{
+          @include fz_vw(26);
+          width : size_sp(113);
+          height : size_sp(113);
+          padding : size_sp(44) 0;
+        }
+      }
+    }
+    &-right {
+      font-size : 16px;
+      line-height : (37/16);
+      text-align: center;
+      width : 283px;
+      margin-bottom : 6px;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        width : 100%;
+        margin-top : size_sp(41);
+        margin-bottom : 0;
+      }
+      & .mod-btn {
+        font-size : 14px;
+        width : 150px;
+        margin : 23px auto 0;
+        @include mq_sp{
+          @include fz_vw(26);
+          width : size_sp(370);
+          margin-top : size_sp(51);
+        }
+        &:before {
+          left : 128px;
+          @include mq_sp{
+            left : size_sp(337);
+          }
+        }
+        & a{
+          padding : 13px 0;
+          @include mq_sp{
+            padding : size_sp(29) 0 size_sp(28);
+          }
+        }
+      }
+    }
+    &-distance {
+      margin-top : 17px;
+      @include mq_sp{
+        margin-top : size_sp(12);
+      }
+    }
+  }
+  &__idea {
+    margin-top : 156px;
+    @include mq_sp{
+      margin-top : size_sp(158);
+    }
+    // &.active {
+    //   & .top-gallery__idea-left-item {
+    //     opacity : 1;
+    //   }
+    // }
+    &-inner {
+      width : (902/1160)*100%;
+      margin : (245/1160)*100% auto 0;
+      @include flex(flex, nowrap, flex-start, stretch, normal, row);
+      @media (min-width: 1280px) {
+        width : 902px;
+        margin-top : 245px;
+      }
+      @include mq_sp{
+        width : size_sp(600);
+        flex-direction: column;
+        margin-top : size_sp(268);
+      }
+    }
+    &-left {
+      width : (448/902)*100%;
+      height : (299/337)*100%;
+      margin-right : (40/902)*100%;
+      position :relative;
+      z-index : 1;
+      @media (min-width: 1280px) {
+        width : 448px;
+        height : 299px;
+        margin-right : 40px;
+      }
+      @include mq_sp{
+        width : size_sp(572);
+        height :size_sp(331);
+        padding-right : size_sp(75);
+        margin : 0 auto;
+      }
+      &-item {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+        @include mq_sp{
+          box-shadow: 0 size_sp(3) size_sp(10) rgba(0, 0, 0, .1);
+        }
+        &:not(:first-of-type) {
+          position : absolute;
+          // opacity: 0;
+        }
+        &:nth-of-type(2) {
+          width : (225/448)*100%;
+          height : (151/299)*100%;
+          top : (-179/299)*100%;
+          left : (-69/448)*100%;
+          transition-duration:  1.2s;
+          transition-delay: 1s;
+          @media (min-width: 1280px) {
+            width : 225px;
+            height : 151px;
+            top : -179px;
+            left : -69px;
+          }
+          @include mq_sp{
+            width : size_sp(221);
+            height : size_sp(148);
+            top : size_sp(-172);
+            left : size_sp(-30);
+          }
+        }
+        &:nth-of-type(3) {
+          width : (320/448)*100%;
+          height : (214/299)*100%;
+          top : (285/299)*100%;
+          left : (247/448)*100%;
+          z-index : -1;
+          transition-duration:  1.2s;
+          transition-delay: 1.2s;
+          @media (min-width: 1280px) {
+            width : 320px;
+            height : 214px;
+            top : 285px;
+            left : 247px;
+          }
+          @include mq_sp{
+            width : size_sp(315);
+            height : size_sp(210);
+            top : size_sp(310);
+            left : size_sp(289);
+          }
+        }
+        &:nth-of-type(4) {
+          width : (182/448)*100%;
+          height : (122/299)*100%;
+          top : (-132/299)*100%;
+          right : (-503/448)*100%;
+          z-index : -1;
+          transition-duration:  1.2s;
+          transition-delay: 1.4s;
+          @media (min-width: 1280px) {
+            width : 182px;
+            height : 122px;
+            top : -132px;
+            right : -503px;
+          }
+          @include mq_sp{
+            display : none;
+          }
+        }
+        &:nth-of-type(5) {
+          width : (316/448)*100%;
+          height : (211/299)*100%;
+          top : (-179/299)*100%;
+          left : (356/448)*100%;
+          transition-duration:  1.2s;
+          transition-delay: 1.6s;
+          @media (min-width: 1280px) {
+            width : 316px;
+            height : 211px;
+            top : -179px;
+            left : 356px;
+          }
+          @include mq_sp{
+            width : size_sp(311);
+            height : size_sp(207);
+            top : size_sp(-186);
+            left : size_sp(313);
+          }
+        }
+        &:nth-of-type(6) {
+          width : (290/448)*100%;
+          height : (194/299)*100%;
+          top : (265/299)*100%;
+          left : (-91/448)*100%;
+          transition-duration:  1.2s;
+          transition-delay: 1.8s;
+          @media (min-width: 1280px) {
+            width : 290px;
+            height : 194px;
+            top : 265px;
+            left : -91px;
+          }
+          @include mq_sp{
+            width : size_sp(285);
+            height : size_sp(191);
+            top : size_sp(290);
+            left : size_sp(-52);
+          }
+        }
+        &:last-of-type {
+          width : (369/448)*100%;
+          height : (246/299)*100%;
+          bottom : (-339/299)*100%;
+          right : (-542/448)*100%;
+          transition-duration:  1.2s;
+          transition-delay: 2s;
+          @media (min-width: 1280px) {
+            width : 369px;
+            height : 246px;
+            bottom : -339px;
+            right : -542px;
+          }
+          @include mq_sp{
+            width : size_sp(412);
+            height : size_sp(150);
+            bottom : size_sp(-958);
+            right : size_sp(-52);
+          }
+        }
+      }
+    }
+    &-right {
+      @include fz_vw_pc(16);
+      line-height : (37/16);
+      width :(370/902)*100%;
+      margin-top : (104/902)*100%;
+      @media (min-width: 1280px) {
+        font-size : 16px;
+        width : 370px;
+        margin-top : 104px;
+      }
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        width : 100%;
+        margin-top : size_sp(255);
+      }
+      & .mod-btn {
+        @include fz_vw_pc(16);
+        width : (180/370)*100%;
+        margin-top : (70/370)*100%;
+        margin-left : (150/370)*100%;
+        border: solid 2px $black01;
+        @media (min-width: 1280px) {
+          font-size : 16px;
+          width : 180px;
+          margin-top : 70px;
+          margin-left : 150px;
+          border : solid 2px $black01;
+        }
+        @include mq_sp{
+          @include fz_vw(26);
+          width : size_sp(370);
+          margin : size_sp(66) auto 0;
+          border : solid size_sp(3) $black01;
+        }
+        &:before {
+          height : (2/48)*100%;
+          left : (158/176)*100%;
+          @media (min-width: 1280px) {
+            height : 2px;
+            left : 158px;
+          }
+          @include mq_tab{
+            width : (60/176)*100%;
+          }
+          @include mq_sp{
+            width :size_sp(90);
+            height : size_sp(3);
+            left : size_sp(337);
+          }
+        }
+        &:hover {
+          color : $black01;
+          background-color : rgba(255,255,255,.5);
+          border : solid 2px $blue02;
+          @include mq_sp{
+            border : solid size_sp(3) $blue02;
+          }
+          &:before {
+            width : (60/176)*100%;
+            @media (min-width: 1280px) {
+              width : 60px;
+            }
+            @include mq_sp{
+              width :size_sp(90);
+            }
+          }
+        }
+        & a{
+          padding : (16/176)*100% 0;
+          @media (min-width: 1280px) {
+            padding : 16px 0;
+          }
+          @include mq_sp{
+            padding : size_sp(29) 0 size_sp(28);
+          }
+        }
+      }
+    }
+  }
+}

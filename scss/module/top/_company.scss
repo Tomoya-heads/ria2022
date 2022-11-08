@@ -1,0 +1,48 @@
+.top-company {
+  padding-bottom : 492px;
+  position : relative;
+  @include mq_sp{
+    padding-bottom : size_sp(375);
+  }
+  & .mod-ttl {
+    &.right {
+      & .mod-ttl__ttl {
+        transform: translateX(-93%);
+        @include mq_sp{
+          transform : translateX(-30%);
+        }
+      }
+    }
+  }
+  &__inner {
+    width : 603px;
+    margin : 82px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(76);
+    }
+    & .mod-btn {
+      margin : 53px auto 0;
+      @include mq_sp{
+        margin-top : size_sp(92);
+      }
+    }
+  }
+  &__logo {
+    width : 336px;
+    margin : 0 auto;
+    @include mq_sp{
+      width :size_sp(336);
+    }
+  }
+  &__txt {
+    font-size :16px;
+    line-height : (37/16);
+    margin-top : 54px;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+      margin-top : size_sp(66);
+    }
+  }
+}

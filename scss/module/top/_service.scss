@@ -1,0 +1,102 @@
+.top-service {
+  padding-bottom : 492px;
+  position : relative;
+  @include mq_sp{
+    padding-bottom : size_sp(375);
+  } 
+  &__inner {
+    width : 606px;
+    margin : 35px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(66);
+    }
+  }
+  &__txt {
+    font-size : 16px;
+    line-height : calc(37/16);
+    margin : 0 auto;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : calc(62/30);
+    }
+  }
+  &__banner {
+    &.apartment {
+      height : 412px;
+      margin-top : 53px;
+      @include mq_sp{
+        height : size_sp(450);
+        margin-top : size_sp(66);
+      }
+      & .mod-btn {
+        margin : 98px auto 0;
+        @include mq_sp{
+          margin-top : size_sp(93);
+        }
+      }
+    }
+    &.renovation {
+      height : 284px;
+      margin-top : 60px;
+      @include mq_sp{
+        height : size_sp(300);
+        @include mq_sp{
+          margin-top : size_sp(75);
+        }
+      }
+      & .mod-btn {
+        margin : 54px auto 0;
+        @include mq_sp{
+          margin-top :size_sp(43);
+        }
+      }
+    }
+    & .common-banner {
+      height : 100%;
+      &:hover {
+        & .mod-btn {
+          &:before {
+            width : 60px;
+            @include mq_sp{
+              width : size_sp(90);
+            }
+          }
+        }
+      }
+      & a {
+        height : 100%;
+      }
+      &__img {
+        height : 100%;
+      }
+      &__inner {
+        top : auto;
+        bottom : 41px;
+        transform : translate(-50%, 0);
+        @include mq_sp{
+          bottom : size_sp(42);
+        }
+      }
+      & .mod-btn {
+        font-size : 14px;
+        width : 150px;
+        padding : 13px 0;
+        border : solid 2px $white00;
+        @include mq_sp{
+          @include fz_vw(24);
+          width : size_sp(330);
+          padding : size_sp(27) 0 size_sp(26);
+          border : solid size_sp(3) $white00;
+        }
+        &:before {
+          background-color : $white00;
+          left : 128px;
+          @include mq_sp{
+            left : size_sp(297);
+          }
+        }
+      }
+    }
+  }
+}

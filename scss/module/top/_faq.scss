@@ -1,0 +1,38 @@
+.top-faq {
+  & .mod-ttl {
+    &.left {
+      & .mod-ttl__ttl {
+        transform: translateX(81%);
+        @include mq_tab{
+          transform: translateX(65%);
+        }
+        @include mq_sp{
+          transform : translateX(38%);
+        }
+      }
+    }
+  }
+  &__inner {
+    width : 606px;
+    margin : 0 auto;
+    @include mq_sp{
+      width : size_sp(600);
+    }
+    & .mod-btn {
+      margin : 53px auto 0;
+      @include mq_sp{
+        margin-top : size_sp(66);
+      }
+    }
+  }
+  &__txt {
+    font-size : 16px;
+    line-height : (37/16);
+    margin-top : 34px;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+      margin-top : size_sp(66);
+    }
+  }
+}

@@ -1,0 +1,250 @@
+.page-resident-contact {
+  &__procedure {
+    width : 640px;
+    margin : 86px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(108)
+    }
+    &-ttl {
+      font-size : 28px;
+      line-height : 1;
+      letter-spacing : .1em;
+      text-align : center;
+      @include mq_sp{
+        @include fz_vw(36);
+      }
+    }
+    &-list {
+      margin-top : 42px;
+      @include mq_sp{
+        margin-top : size_sp(62);
+      }
+    }
+    &-item {
+      position : relative;
+      @include flex(flex, nowrap, space-between, center, normal, row);
+      @include mq_sp{
+        justify-content: center;
+        flex-direction: column;
+      }
+      &:first-of-type {
+        &:before {
+          bottom : -72px;
+          @include mq_sp{
+            bottom : auto;
+          }
+        }
+      }
+      &:nth-of-type(2){
+        margin-top : 108px;
+        @include mq_sp{
+          margin-top : auto;
+        }
+        &:before {
+          bottom : -72px;
+          @include mq_sp{
+            bottom : auto;
+          }
+        }
+      }
+      &:nth-of-type(3){
+        margin-top : 78px;
+        @include mq_sp{
+          margin-top : auto;
+        }
+        &:before {
+          bottom : -43px;
+          @include mq_sp{
+            bottom : auto;
+          }
+        }
+      }
+      &:nth-of-type(4){
+        margin-top : 68px;
+        @include mq_sp{
+          margin-top : auto;
+        }
+        &:before {
+          bottom : -61px;
+          @include mq_sp{
+            bottom : auto;
+          }
+        }
+      }
+      &:last-of-type {
+        margin-top : 67px;
+        @include mq_sp{
+          margin-top : auto;
+        }
+      }
+      &:not(:last-of-type) {
+        &:before {
+          content : "";
+          width : 70px;
+          height : 39px;
+          background-image : url(./img/common/icn_triangle-blue.svg);
+          background-size : cover;
+          background-repeat: no-repeat;
+          position : absolute;
+          left : 50%;
+          transform :translateX(-50%);
+          @include mq_sp{
+            width : size_sp(100);
+            height : size_sp(56);
+            bottom : size_sp(-87);
+          }
+        }
+      }
+      &:not(:first-of-type) {
+        @include mq_sp{
+          margin-top : size_sp(121);
+        }
+      }
+    }
+    &-left {
+      width : 180px;
+      height : 180px;
+      @include mq_sp{
+        width : size_sp(250);
+        height : size_sp(250);
+        position : absolute;
+        top : size_sp(85);
+        left : 50%;
+        transform : translateX(-50%);
+      }
+    }
+    &-right {
+      width : 440px;
+      @include mq_sp{
+        width : 100%;
+      }
+    }
+    &-number {
+      font-size : 20px;
+      line-height : (37/20);
+      @include mq_sp{
+        @include fz_vw(34);
+        line-height : (62/34);
+        text-align : center;
+      }
+    }
+    &-txt {
+      font-size : 16px;
+      line-height : (37/16);
+      margin-top : 10px;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        margin-top : size_sp(294);
+      }
+    }
+    &-caution {
+      font-size : 16px;
+      line-height : (37/16);
+      width : 606px;
+      padding : 23px 29px 22px;
+      margin : 64px auto 0;
+      border : solid 1px $gray01;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        border : solid size_sp(2) $gray01;
+        width : size_sp(630);
+        padding : size_sp(40) size_sp(48) size_sp(39);
+        margin-top : size_sp(90);
+      }
+    }
+  }
+  &__inner {
+    width : 606px;
+    margin : 56px auto 0;
+    @include mq_sp{
+      width : size_sp(600);
+      margin-top : size_sp(92);
+    }
+  }
+  &__intro {
+    font-size : 16px;
+    line-height : (37/16);
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+    }
+  }
+  &__note {
+    font-size : 12px;
+    line-height : 1;
+    display : block;
+    margin : 66px 0 27px;
+    @include mq_sp{
+      @include fz_vw(28);
+      margin : size_sp(76) 0 size_sp(60);
+    }
+  }
+  & .form {
+    &__caution {
+      margin-top : 102px;
+      @include mq_sp{
+        margin-top : size_sp(100);
+      }
+    }
+    &__check {
+      @include mq_sp{
+        margin-top : size_sp(30);
+      }
+    }
+  }
+}
+
+.page.confirm {
+  & .page-resident-contact__intro {
+    text-align : center;
+  }
+}
+
+.page.thanks {
+  & .page-resident-contact {
+    &__inner {
+      width : 628px;
+      @include mq_sp{
+        width : size_sp(596);
+      }
+    }
+    &__thanksLogo {
+      width : 336px;
+      margin : 0 auto;
+      @include mq_sp{
+        width : size_sp(336);
+      }
+    }
+    &__intro {
+      font-size : 16px;
+      line-height : (37/16);
+      text-align : center;
+      margin-top : 54px;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        margin-top : size_sp(66);
+      }
+    }
+    & .mod-btn {
+      width : 372px;
+      margin : 53px auto;
+      @include mq_sp{
+        width : size_sp(370);
+        margin-top : size_sp(92);
+      }
+      &.back {
+        &:before {
+          left : auto;
+          right : 350px;
+          @include mq_sp{
+            right : size_sp(337);
+          }
+        }
+      }
+    }
+  }
+}
