@@ -33,7 +33,7 @@
 	<div id="Wrapper">
 
 		<!-- ヘッダー -->
-		<header class="common-header" id="Header">
+		<header class="common-header <?php if(is_front_page()){echo "active";}?>" id="Header">
 			<div class="common-header__inner">
 				<!-- *** logo *** -->
 				<?php if(is_front_page()): ?>

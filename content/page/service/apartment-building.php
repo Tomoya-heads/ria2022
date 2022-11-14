@@ -152,7 +152,7 @@
               <li class="<?php echo $pageName;?>__model-case-common-item">
                 <div class="<?php echo $pageName;?>__model-case-common-item-left">
                   建物＋土地価格<br>
-                  ご購入地諸経費
+                  ご購入時諸経費
                 </div>
                 <div class="<?php echo $pageName;?>__model-case-common-item-right">
                   8,500万円<br>

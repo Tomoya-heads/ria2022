@@ -151,6 +151,33 @@
               </ul>
             </div>
           </div>
+          <!-- モーダル -->
+          <div class="<?php echo $pageName;?>__modal pctab-only">
+            <ul class="<?php echo $pageName;?>__modal-list interlocking_slider">
+              <?php if(have_rows('acf_gallery_interior_img_group')): while(have_rows('acf_gallery_exterior_img_group')): the_row();?>
+                <li class="<?php echo $pageName;?>__modal-item">
+                  <div class="<?php echo $pageName;?>__modal-img">
+                    <?php
+                      $image_file = get_sub_field('acf_gallery_exterior_img');
+                      $image_size = getimagesize($image_file);
+
+                      $image_width = $image_size[0];
+                      $image_height = $image_size[1];
+
+                      if($image_width > $image_height){
+                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+
+                      } else if($image_width < $image_height){
+                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      } else {
+                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      }
+                    ;?>
+                  </div>
+                </li>
+              <?php endwhile; endif;?>
+            </ul>
+          </div>
         </li>
         <!-- 内装グループ -->
         <li class="<?php echo $pageName;?>__item">
@@ -298,6 +325,33 @@
                 <?php endwhile; endif;?>
               </ul>
             </div>
+          </div>
+          <!-- モーダル -->
+          <div class="<?php echo $pageName;?>__modal pctab-only">
+            <ul class="<?php echo $pageName;?>__modal-list interlocking_slider">
+              <?php if(have_rows('acf_gallery_interior_img_group')): while(have_rows('acf_gallery_interior_img_group')): the_row();?>
+                <li class="<?php echo $pageName;?>__modal-item">
+                  <div class="<?php echo $pageName;?>__modal-img">
+                    <?php
+                      $image_file = get_sub_field('acf_gallery_interior_img');
+                      $image_size = getimagesize($image_file);
+
+                      $image_width = $image_size[0];
+                      $image_height = $image_size[1];
+
+                      if($image_width > $image_height){
+                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+
+                      } else if($image_width < $image_height){
+                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      } else {
+                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      }
+                    ;?>
+                  </div>
+                </li>
+              <?php endwhile; endif;?>
+            </ul>
           </div>
         </li>
       </ul>

@@ -333,7 +333,8 @@
   }
   //モーダル
   &__modal {
-    width : 768px;
+    max-width : 912px;
+    width : 100%;
     position : fixed;
     top : 50%;
     left : 50%;
@@ -343,6 +344,9 @@
     opacity : 0;
     transition : .6s;
     pointer-events: none;
+    @include mq_tab{
+      width : 768px;
+    }
     @include mq_sp{
       display : none;
     }
@@ -412,7 +416,10 @@
       pointer-events: none;
     }
     &-img {
-      height : 512px;
+      height : 608px;
+      @include mq_tab{
+        height : size_sp(512);
+      }
       @include mq_sp{
         height : size_sp(400);
       }

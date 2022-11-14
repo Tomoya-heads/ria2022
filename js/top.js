@@ -143,11 +143,11 @@ $(function(){
   //読み込みが完了したら実行する
   $(window).on('load',function(){
     //ローディングアニメーションをフェードアウト
-    $('.common-loader').delay(4000).fadeOut(400);
+    $('.common-loader').delay(2800).fadeOut(400);
   });
 
   //ページの読み込みが完了してなくても5秒後にアニメーションを非表示にする
   setTimeout(function(){
     $('.common-loader').fadeOut(400);
-  },4000);
+  },2800);
 });

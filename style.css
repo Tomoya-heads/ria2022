@@ -7630,7 +7630,8 @@ div.wpcf7-mail-sent-ok {
 }
 
 .single-gallery__modal {
-  width: 768px;
+  max-width: 912px;
+  width: 100%;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -7641,6 +7642,12 @@ div.wpcf7-mail-sent-ok {
   -webkit-transition: .6s;
   transition: .6s;
   pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .single-gallery__modal {
+    width: 768px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -7736,7 +7743,13 @@ div.wpcf7-mail-sent-ok {
 }
 
 .single-gallery__modal-img {
-  height: 512px;
+  height: 608px;
+}
+
+@media (max-width: 1024px) {
+  .single-gallery__modal-img {
+    height: 68.26667vw;
+  }
 }
 
 @media (max-width: 767px) {

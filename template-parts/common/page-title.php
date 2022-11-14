@@ -86,7 +86,21 @@
   } elseif(is_archive('') && !is_post_type_archive('gallery') || is_single('') && !is_singular('gallery')) {
     echo '<div class="common-fv">';
     echo '<img src="'.get_stylesheet_directory_uri().'/img/page/fv_news.jpg" class="object_fit">';
-    echo '<h1 class="common-fv__ttl">お知らせ</h1>';
+    if ( is_archive() && !is_category(array('construction','apartment-management','review','design-meeting','blog'))) {
+      echo '<h1 class="common-fv__ttl">お知らせ</h1>';
+    } elseif ( is_category('construction')) {
+      echo '<h1 class="common-fv__ttl">施　工</h1>';
+    } elseif ( is_category('apartment-management')) {
+      echo '<h1 class="common-fv__ttl">アパート経営</h1>';
+    } elseif ( is_category('review')) {
+      echo '<h1 class="common-fv__ttl">お客様の声</h1>';
+    } elseif ( is_category('design-meeting')) {
+      echo '<h1 class="common-fv__ttl">デザイン会議</h1>';
+    } elseif ( is_category('blog')) {
+      echo '<h1 class="common-fv__ttl">ブログ</h1>';
+    } else {
+      echo '<h1 class="common-fv__ttl">お知らせ</h1>';
+    }
     echo '<div class="common-fv__subTtl">';
     echo '<small class="common-fv__subTtl-inner font-serif">News</small>';
     echo '</div>';

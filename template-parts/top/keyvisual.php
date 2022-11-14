@@ -1,5 +1,5 @@
 <?php $sectionName="top-kv";?>
-<section class="<?php echo $sectionName;?>">
+<section class="<?php echo $sectionName;?> <?php if(is_front_page()){echo "active";}?>">
   <div class="<?php echo $sectionName;?>__inner">
     <div class="<?php echo $sectionName;?>__left">
       <ul class="<?php echo $sectionName;?>__left-high">
@@ -173,7 +173,7 @@
       </ul>
     </div>
   </div>
-  <div class="<?php echo $sectionName;?>__btn">
+  <div class="<?php echo $sectionName;?>__btn <?php if(is_front_page()){echo "clicked";}?>">
     <div class="<?php echo $sectionName;?>__btn-item night">
       <div class="<?php echo $sectionName;?>__btn-circle">
       <!-- 正向きの円 -->
