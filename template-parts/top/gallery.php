@@ -67,7 +67,7 @@
             <div class="<?php echo $sectionName;?>__model-right">
               <div class="<?php echo $sectionName;?>__model-address">横浜市港北区篠原北1丁目</div>
               <div class="<?php echo $sectionName;?>__model-distance">東急東横線「菊名駅」徒歩4分</div>
-              <div class="mod-btn"><a href="<?php echo home_url('/gallery/acua-stage-菊名（アクアステージきくな）/');?>" target="_blank">詳しく見る</a></div>
+              <div class="mod-btn"><a href="<?php echo home_url('/gallery/acua-stage菊名/');?>" target="_blank">詳しく見る</a></div>
             </div>
           </li>
           <li class="<?php echo $sectionName;?>__model-item">
@@ -101,7 +101,7 @@
         </ul>
         <div class="<?php echo $sectionName;?>__idea-right">
           <p class="<?php echo $sectionName;?>__idea-txt">1部屋の中に3層のフロアがあるスキップフロア。女優ミラーやニッチ、BARカウンターなどアイデア溢れるお部屋の工夫が張り巡らされています。</p>
-          <div class="mod-btn"><a target="_blank" href="https://radiance.ria-partners.co.jp/">詳しく見る</a></div>
+          <div class="mod-btn"><a href="<?php echo home_url('/idea-design/');?>">詳しく見る</a></div>
         </div>
       </div>
     </div>

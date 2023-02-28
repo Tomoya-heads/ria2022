@@ -28,20 +28,19 @@
         </a>
       </div>
     </div>
-    <div class="<?php echo $sectionName;?>__banner renovation">
+    <!-- <div class="<?php //echo $sectionName;?>__banner renovation">
       <div class="common-banner">
-        <a href="<?php echo home_url('/service/renovation/');?>">
+        <a href="<?php //echo home_url('/service/renovation/');?>">
           <div class="common-banner__img">
-            <img class="object_fit" src="<?php echo get_stylesheet_directory_uri();?>/img/page/fv_renovation.jpg">
+            <img class="object_fit" src="<?php //echo get_stylesheet_directory_uri();?>/img/page/fv_renovation.jpg">
           </div>
           <div class="common-banner__inner">
-            <!-- <div class="common-banner__high">投資用不動産</div> -->
             <div class="common-banner__low">リノベーション</div>
             <div class="mod-btn">詳しく見る</div>
           </div>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="common-img left">
     <img class="object_fit" src="<?php echo get_stylesheet_directory_uri();?>/img/top/img_service.jpg">

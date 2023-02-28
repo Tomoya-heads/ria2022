@@ -34,6 +34,14 @@ body{
     pointer-events: auto;
     transition: opacity 1s;
   }
+  &.error404 {
+    & .common-main{
+      height : 100vh;
+      @include mq_sp{
+        height : 100%;
+      }
+    }
+  }
 }
 
 // =============================================================

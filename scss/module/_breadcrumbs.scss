@@ -25,6 +25,9 @@
       flex-direction: row;
       overflow-x: scroll;
     }
+    &::-webkit-scrollbar { 
+      display: none;
+    }
   }
   &__item {
     padding-left : 15px;

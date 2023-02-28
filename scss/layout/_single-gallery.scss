@@ -1,4 +1,8 @@
 .single-gallery {
+  & .slick-slider {
+    -ms-touch-action: auto;
+    touch-action: auto;
+  }
   &__inner {
     margin-top : 80px;
     @include mq_sp{
@@ -348,7 +352,7 @@
       width : 768px;
     }
     @include mq_sp{
-      display : none;
+      width : size_sp(680);
     }
     &.active {
       opacity : 1;
@@ -412,7 +416,6 @@
       }
     }
     &-item {
-
       pointer-events: none;
     }
     &-img {
@@ -621,17 +624,18 @@
       }
     }
     &-left {
-      width : 82px;
+      width : 120px;
       margin-right : 30px;
+      white-space: nowrap;
       @include mq_sp{
-        width : size_sp(154);
+        width : size_sp(212);
         margin-right : size_sp(30);
       }
     }
     &-right {
-      width : 494px;
+      width : 456px;
       @include mq_sp{
-        width : size_sp(416);
+        width : size_sp(358);
       }
     }
     &-feature {

@@ -1,0 +1,218 @@
+.archive-idea-design {
+  &__ttl {
+    display: flex;
+    justify-content: center;
+    & span {
+      font-size : 28px;
+      line-height: (40/28);
+      letter-spacing: .1em;
+      display: inline-block;
+      position: relative;
+      @include mq_sp{
+        @include fz_vw(36);
+        line-height : (52/36);
+      }
+      &::before {
+        content : "";
+        width : 28px;
+        height : 28px;
+        background-image: url(./img/common/icn_brackets.svg);
+        background-size : cover;
+        background-repeat: no-repeat;
+        position : absolute;
+        top : -6px;
+        left : -45px;
+        @include mq_sp{
+          width : size_sp(37);
+          height : size_sp(37);
+          top : size_sp(-7);
+          left : size_sp(-62);
+        }
+      }
+      &::after {
+        content : "";
+        width : 28px;
+        height : 28px;
+        background-image: url(./img/common/icn_brackets.svg);
+        background-size : cover;
+        background-repeat: no-repeat;
+        position : absolute;
+        bottom : -3px;
+        right : -45px;
+        transform: rotate(180deg);
+        @include mq_sp{
+          width : size_sp(37);
+          height : size_sp(37);
+          bottom : size_sp(-7);
+          right : size_sp(-62);
+        }
+      }
+    }
+  }
+  &__gallery {
+    padding-top : 80px;
+    @include mq_sp{
+      padding-top : size_sp(101);
+    }
+    & .common-gallery {
+      margin-top : 60px;
+      @include mq_sp{
+        margin-top : size_sp(74);
+      }
+    }
+    &-txt {
+      font-size : 16px;
+      line-height : (37/16);
+      width : 606px;
+      margin : 54px auto 0;
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        width : size_sp(600);
+        margin-top : size_sp(72);
+      }
+    }
+  }
+  &__article {
+    padding-top : 194px;
+    @include mq_sp{
+      padding-top : size_sp(189);
+    }
+  }
+  &__group {
+    width : 961px;
+    margin : 60px auto 0;
+    @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: flex-start, $align_c: stretch, $direction: row,);
+    @media (max-width: 1163px){
+      width : 627px;
+    }
+    @include mq_sp{
+      width : size_sp(676);
+      margin-top : size_sp(58);
+    }
+  }
+  &__btn {
+    font-size : 13px;
+    font-weight : 700;
+    line-height : 1;
+    width : 553px;
+    height : 34px;
+    margin : 100px auto 0;
+    @include mq_sp{
+      @include fz_vw(22);
+      width : size_sp(687);
+      height : size_sp(54);
+      margin-top : size_sp(100);
+    }
+    & .wp-pagenavi {
+      margin : 0;
+      @include flex($display: flex, $wrap: nowrap, $justify_c: center, $align_i: stretch, $align_c: stretch, $direction: row,);
+    }
+    & .page,.pages,.current,.extend{
+      height : 34px;
+      padding : 9px 13px 7px;
+      display : block;
+      margin-right : 12px;
+      @include mq_sp{
+        height : size_sp(54);
+        margin-right : size_sp(14);
+        padding : size_sp(11) size_sp(17) size_sp(10);
+      }
+    }
+    & .page,.pages,.extend {
+      border : solid 2px $black01;
+      @include mq_sp{
+        border : solid size_sp(3) $black01;
+      }
+    }
+    & .current {
+      color : $white00;
+      background-color : $blue02;
+      border : solid 2px $blue02;
+      @include mq_sp{
+        border : solid size_sp(3) $blue02;
+      }
+    }
+    & .previouspostslink,.nextpostslink,.first,.last {
+      font-size : 0;
+      width :37px;
+      height : 34px;
+      display : block;
+      border : solid 2px $black01;
+      position : relative;
+      margin-right : 12px;
+      @include mq_sp{
+        width : size_sp(49);
+        height : size_sp(54);
+        border : solid size_sp(3) $black01;
+        margin-right : size_sp(14);
+      }
+    }
+    & .last {
+      margin-right : 0;
+    }
+    & .previouspostslink:before,.nextpostslink:before,.first:before,.last:before,.first:after,.last:after {
+      content : '';
+      position : absolute;
+    }
+    & .previouspostslink:before,.nextpostslink:before {
+      width : 8px;
+      height : 18px;
+      background-image : url(./img/archive/icn_arrow-black.svg);
+      background-repeat: no-repeat;
+      background-size : cover;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -50%);
+      @include mq_sp{
+        width : size_sp(13);
+        height : size_sp(28);
+      }
+    }
+    & .nextpostslink:before {
+      transform : rotate(180deg) translate(50%,50%);
+    }
+    & .first:before,.last:before,.first:after,.last:after {
+      width : 8px;
+      height : 18px;
+      background-image : url(./img/archive/icn_arrow-black.svg);
+      background-repeat: no-repeat;
+      background-size : cover;
+      top : 50%;
+      left : 50%;
+      @include mq_sp{
+        width : size_sp(13);
+        height : size_sp(28);
+      }
+    }
+    & .first:before {
+      transform : translate(-100%,-50%);
+      @include mq_sp{
+        transform : translate(-90%,-50%);
+      }
+    }
+    & .first:after {
+      transform : translate(-10%,-50%);
+      @include mq_sp{
+        transform : translate(-25%,-50%);
+      }
+    }
+    & .last:before {
+      transform : rotate(180deg) translate(90%,50%);
+      @include mq_sp{
+        transform : rotate(180deg) translate(75%,50%);
+      }
+    }
+    & .last:after {
+      transform : rotate(180deg) translate(0%,50%);
+      @include mq_sp{
+        transform : rotate(180deg) translate(10%,50%);
+      }
+    }
+    & .extend {
+      &:last-of-type {
+        display : none;
+      }
+    }
+  }
+}

@@ -5,27 +5,27 @@
 <form class="<?php echo $pageName;?>__form" role="search" method="get" action="<?php echo home_url('/gallery/'); ?>">
   <!-- 都道府県 -->
   <ul class="<?php echo $pageName;?>__form-list">
-    <li class="<?php echo $pageName;?>__form-item">
-      <div class="<?php echo $pageName;?>__form-left">都道府県</div>
-      <div class="<?php echo $pageName;?>__form-right">
+    <!-- <li class="<?php //echo $pageName;?>__form-item">
+      <div class="<?php //echo $pageName;?>__form-left">都道府県</div>
+      <div class="<?php //echo $pageName;?>__form-right">
         <select name="gallery_prefecture">
           <option value="">選択してください</option>
           <?php
-          $terms = get_terms('prefecture');
-          foreach ($terms as $term) :
-            $prefecture_name = $term->name;
-            $prefecture_slug = $term->slug;
+          // $terms = get_terms('prefecture');
+          // foreach ($terms as $term) :
+          //   $prefecture_name = $term->name;
+          //   $prefecture_slug = $term->slug;
           ?>
-          <option <?php if($_GET['gallery_prefecture'] == $prefecture_slug){echo 'selected';}?> value="<?php echo esc_attr($prefecture_slug); ?>"><?php echo esc_html($prefecture_name); ?></option>
+          <option <?php //if($_GET['gallery_prefecture'] == $prefecture_slug){echo 'selected';}?> value="<?php //echo esc_attr($prefecture_slug); ?>"><?php //echo esc_html($prefecture_name); ?></option>
           <?php
-          endforeach;
+          // endforeach;
           ?>
         </select>
       </div>
-    </li>
-    <!-- 内装特徴 -->
+    </li> -->
+    <!-- アイデア作品群 -->
     <li class="<?php echo $pageName;?>__form-item">
-      <div class="<?php echo $pageName;?>__form-left">内装特徴</div>
+      <div class="<?php echo $pageName;?>__form-left">アイデア作品群</div>
       <div class="<?php echo $pageName;?>__form-right">
         <select name="gallery_interior">
           <option value="">選択してください</option>

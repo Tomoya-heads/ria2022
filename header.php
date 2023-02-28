@@ -66,7 +66,8 @@
 						</li>
 						<li class="common-header__item"><a href="https://ria-partners.co.jp/strategy/" target="_blank">特徴と強み</a></li>
 						<li class="common-header__item <?php if ( is_post_type_archive('gallery') || is_singular('gallery')) { echo 'current'; } ?>"><a href="<?php echo home_url('/gallery/');?>">ギャラリー</a></li>
-						<li class="common-header__item <?php if ( is_archive('') && !is_post_type_archive('gallery') || is_single('') && !is_singular('gallery') ) { echo 'current'; } ?>"><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
+						<li class="common-header__item <?php if ( is_post_type_archive('idea-design') || is_singular('idea-design')) { echo 'current'; } ?>"><a href="<?php echo home_url('/idea-design/');?>">アイデアデザイン</a></li>
+						<li class="common-header__item <?php if ( is_archive('') && !is_post_type_archive('gallery')  && !is_post_type_archive('idea-design') || is_single('') && !is_singular('gallery') && !is_singular('idea-design') ) { echo 'current'; } ?>"><a href="<?php echo home_url('/news/'); ?>">お知らせ</a></li>
 						<li class="common-header__item <?php if ( is_page('company')) { echo 'current'; } ?>"><a href="<?php echo home_url('/company/');?>">会社概要</a></li>
 						<li class="common-header__item"><a href="<?php if(is_page('apartment-building')){echo '#faq';}else{echo esc_url( home_url( '/service/apartment-building/#faq' ) );} ?>">よくある質問</a></li>
 						<li class="common-header__item <?php if ( is_page( array( 'general_contact', 'resident_contact', 'reservation', 'confirm', 'thanks' ) )) { echo 'current'; } ?>">

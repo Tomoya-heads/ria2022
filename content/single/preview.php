@@ -13,21 +13,22 @@
               <?php if(have_rows('acf_gallery_exterior_img_group')): while(have_rows('acf_gallery_exterior_img_group')): the_row();?>
                 <li class="<?php echo $pageName;?>__left-item">
                   <div class="<?php echo $pageName;?>__left-img">
+                    <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                     <?php
-                      $image_file = get_sub_field('acf_gallery_exterior_img');
-                      $image_size = getimagesize($image_file);
+                      // $image_file = get_sub_field('acf_gallery_exterior_img');
+                      // $image_size = getimagesize($image_file);
 
-                      $image_width = $image_size[0];
-                      $image_height = $image_size[1];
+                      // $image_width = $image_size[0];
+                      // $image_height = $image_size[1];
 
-                      if($image_width > $image_height){
-                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // if($image_width > $image_height){
+                      //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                      } else if($image_width < $image_height){
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                      } else {
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                      }
+                      // } else if($image_width < $image_height){
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // } else {
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // }
                     ;?>
                   </div>
                 </li>
@@ -43,21 +44,22 @@
                   <?php if(have_rows('acf_gallery_exterior_img_group')):$count_post = 0;
                     while(have_rows('acf_gallery_exterior_img_group')): the_row();$count_post++;if($count_post < 10):?>
                     <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                      <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                       <?php
-                        $image_file = get_sub_field('acf_gallery_exterior_img');
-                        $image_size = getimagesize($image_file);
+                        // $image_file = get_sub_field('acf_gallery_exterior_img');
+                        // $image_size = getimagesize($image_file);
 
-                        $image_width = $image_size[0];
-                        $image_height = $image_size[1];
+                        // $image_width = $image_size[0];
+                        // $image_height = $image_size[1];
 
-                        if($image_width > $image_height){
-                            echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // if($image_width > $image_height){
+                        //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                        } else if($image_width < $image_height){
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                        } else {
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                        }
+                        // } else if($image_width < $image_height){
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // } else {
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // }
                       ;?>
                     </div>
                   <?php endif;endwhile; endif;?>
@@ -71,21 +73,22 @@
                   <?php endif; endwhile;?>
                     <?php $count_post = 0; while(have_rows('acf_gallery_exterior_img_group')): the_row();$count_post++;if($count_post > 9 && $count_post <= 18):?>
                       <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                        <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                         <?php
-                          $image_file = get_sub_field('acf_gallery_exterior_img');
-                          $image_size = getimagesize($image_file);
+                          // $image_file = get_sub_field('acf_gallery_exterior_img');
+                          // $image_size = getimagesize($image_file);
 
-                          $image_width = $image_size[0];
-                          $image_height = $image_size[1];
+                          // $image_width = $image_size[0];
+                          // $image_height = $image_size[1];
 
-                          if($image_width > $image_height){
-                              echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // if($image_width > $image_height){
+                          //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                          } else if($image_width < $image_height){
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                          } else {
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                          }
+                          // } else if($image_width < $image_height){
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // } else {
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // }
                         ;?>
                       </div>
                     <?php endif; endwhile;?>
@@ -101,21 +104,22 @@
                   <?php endif; endwhile;?>
                     <?php $count_post = 0; while(have_rows('acf_gallery_exterior_img_group')): the_row();$count_post++;if($count_post > 18 && $count_post <= 27):?>
                       <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                        <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                         <?php
-                          $image_file = get_sub_field('acf_gallery_exterior_img');
-                          $image_size = getimagesize($image_file);
+                          // $image_file = get_sub_field('acf_gallery_exterior_img');
+                          // $image_size = getimagesize($image_file);
 
-                          $image_width = $image_size[0];
-                          $image_height = $image_size[1];
+                          // $image_width = $image_size[0];
+                          // $image_height = $image_size[1];
 
-                          if($image_width > $image_height){
-                              echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // if($image_width > $image_height){
+                          //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                          } else if($image_width < $image_height){
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                          } else {
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                          }
+                          // } else if($image_width < $image_height){
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // } else {
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                          // }
                         ;?>
                       </div>
                     <?php endif; endwhile;?>
@@ -129,21 +133,22 @@
                 <?php if(have_rows('acf_gallery_exterior_img_group')):$count_post = 0; while(have_rows('acf_gallery_exterior_img_group')): the_row();?>
                   <li class="<?php echo $pageName;?>__right-item ">
                     <div class="<?php echo $pageName;?>__right-img">
+                      <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                       <?php
-                        $image_file = get_sub_field('acf_gallery_exterior_img');
-                        $image_size = getimagesize($image_file);
+                        // $image_file = get_sub_field('acf_gallery_exterior_img');
+                        // $image_size = getimagesize($image_file);
 
-                        $image_width = $image_size[0];
-                        $image_height = $image_size[1];
+                        // $image_width = $image_size[0];
+                        // $image_height = $image_size[1];
 
-                        if($image_width > $image_height){
-                            echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // if($image_width > $image_height){
+                        //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                        } else if($image_width < $image_height){
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                        } else {
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                        }
+                        // } else if($image_width < $image_height){
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // } else {
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                        // }
                       ;?>
                     </div>
                   </li>
@@ -154,24 +159,25 @@
           <!-- モーダル -->
           <div class="<?php echo $pageName;?>__modal pctab-only">
             <ul class="<?php echo $pageName;?>__modal-list interlocking_slider">
-              <?php if(have_rows('acf_gallery_interior_img_group')): while(have_rows('acf_gallery_exterior_img_group')): the_row();?>
+              <?php if(have_rows('acf_gallery_exterior_img_group')): while(have_rows('acf_gallery_exterior_img_group')): the_row();?>
                 <li class="<?php echo $pageName;?>__modal-item">
                   <div class="<?php echo $pageName;?>__modal-img">
+                    <img src="<?php the_sub_field('acf_gallery_exterior_img');?>">
                     <?php
-                      $image_file = get_sub_field('acf_gallery_exterior_img');
-                      $image_size = getimagesize($image_file);
+                      // $image_file = get_sub_field('acf_gallery_exterior_img');
+                      // $image_size = getimagesize($image_file);
 
-                      $image_width = $image_size[0];
-                      $image_height = $image_size[1];
+                      // $image_width = $image_size[0];
+                      // $image_height = $image_size[1];
 
-                      if($image_width > $image_height){
-                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // if($image_width > $image_height){
+                      //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_exterior_img').'">';
 
-                      } else if($image_width < $image_height){
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                      } else {
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
-                      }
+                      // } else if($image_width < $image_height){
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // } else {
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_exterior_img').'">';
+                      // }
                     ;?>
                   </div>
                 </li>
@@ -187,23 +193,23 @@
               <?php if(have_rows('acf_gallery_interior_img_group')): while(have_rows('acf_gallery_interior_img_group')): the_row();?>
                 <li class="<?php echo $pageName;?>__left-item">
                   <div class="<?php echo $pageName;?>__left-img">
+                  <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                     <?php
-                      $image_file = get_sub_field('acf_gallery_interior_img');
-                      $image_size = getimagesize($image_file);
+                      // $image_file = get_sub_field('acf_gallery_interior_img');
+                      // $image_size = getimagesize($image_file);
 
-                      $image_width = $image_size[0];
-                      $image_height = $image_size[1];
+                      // $image_width = $image_size[0];
+                      // $image_height = $image_size[1];
 
-                      if($image_width > $image_height){
-                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // if($image_width > $image_height){
+                      //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                      } else if($image_width < $image_height){
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                      } else {
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                      }
+                      // } else if($image_width < $image_height){
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // } else {
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // }
                     ;?>
-                    <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                   </div>
                 </li>
               <?php endwhile; endif;?>
@@ -218,21 +224,22 @@
                   <?php if(have_rows('acf_gallery_interior_img_group')):$count_post = 0;
                     while(have_rows('acf_gallery_interior_img_group')): the_row();$count_post++;if($count_post < 10):?>
                     <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                      <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                       <?php
-                        $image_file = get_sub_field('acf_gallery_interior_img');
-                        $image_size = getimagesize($image_file);
+                        // $image_file = get_sub_field('acf_gallery_interior_img');
+                        // $image_size = getimagesize($image_file);
 
-                        $image_width = $image_size[0];
-                        $image_height = $image_size[1];
+                        // $image_width = $image_size[0];
+                        // $image_height = $image_size[1];
 
-                        if($image_width > $image_height){
-                            echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // if($image_width > $image_height){
+                        //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                        } else if($image_width < $image_height){
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                        } else {
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                        }
+                        // } else if($image_width < $image_height){
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // } else {
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // }
                       ;?>
                     </div>
                   <?php endif;endwhile; endif;?>
@@ -246,21 +253,22 @@
                   <?php endif; endwhile;?>
                     <?php $count_post = 0; while(have_rows('acf_gallery_interior_img_group')): the_row();$count_post++;if($count_post > 9 && $count_post <= 18):?>
                       <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                        <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                         <?php
-                          $image_file = get_sub_field('acf_gallery_interior_img');
-                          $image_size = getimagesize($image_file);
+                          // $image_file = get_sub_field('acf_gallery_interior_img');
+                          // $image_size = getimagesize($image_file);
 
-                          $image_width = $image_size[0];
-                          $image_height = $image_size[1];
+                          // $image_width = $image_size[0];
+                          // $image_height = $image_size[1];
 
-                          if($image_width > $image_height){
-                              echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // if($image_width > $image_height){
+                          //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                          } else if($image_width < $image_height){
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                          } else {
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                          }
+                          // } else if($image_width < $image_height){
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // } else {
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // }
                         ;?>
                       </div>
                     <?php endif; endwhile;?>
@@ -276,21 +284,22 @@
                   <?php endif; endwhile;?>
                     <?php $count_post = 0; while(have_rows('acf_gallery_interior_img_group')): the_row();$count_post++;if($count_post > 18 && $count_post <= 27):?>
                       <div class="<?php echo $pageName;?>__right-img <?php echo $count_post;?>">
+                        <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                         <?php
-                          $image_file = get_sub_field('acf_gallery_interior_img');
-                          $image_size = getimagesize($image_file);
+                          // $image_file = get_sub_field('acf_gallery_interior_img');
+                          // $image_size = getimagesize($image_file);
 
-                          $image_width = $image_size[0];
-                          $image_height = $image_size[1];
+                          // $image_width = $image_size[0];
+                          // $image_height = $image_size[1];
 
-                          if($image_width > $image_height){
-                              echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // if($image_width > $image_height){
+                          //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                          } else if($image_width < $image_height){
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                          } else {
-                              echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                          }
+                          // } else if($image_width < $image_height){
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // } else {
+                          //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                          // }
                         ;?>
                       </div>
                     <?php endif; endwhile;?>
@@ -304,21 +313,22 @@
                 <?php if(have_rows('acf_gallery_interior_img_group')):$count_post = 0; while(have_rows('acf_gallery_interior_img_group')): the_row();?>
                   <li class="<?php echo $pageName;?>__right-item ">
                     <div class="<?php echo $pageName;?>__right-img">
+                      <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                       <?php
-                        $image_file = get_sub_field('acf_gallery_interior_img');
-                        $image_size = getimagesize($image_file);
+                        // $image_file = get_sub_field('acf_gallery_interior_img');
+                        // $image_size = getimagesize($image_file);
 
-                        $image_width = $image_size[0];
-                        $image_height = $image_size[1];
+                        // $image_width = $image_size[0];
+                        // $image_height = $image_size[1];
 
-                        if($image_width > $image_height){
-                            echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // if($image_width > $image_height){
+                        //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                        } else if($image_width < $image_height){
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                        } else {
-                            echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                        }
+                        // } else if($image_width < $image_height){
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // } else {
+                        //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                        // }
                       ;?>
                     </div>
                   </li>
@@ -332,21 +342,22 @@
               <?php if(have_rows('acf_gallery_interior_img_group')): while(have_rows('acf_gallery_interior_img_group')): the_row();?>
                 <li class="<?php echo $pageName;?>__modal-item">
                   <div class="<?php echo $pageName;?>__modal-img">
+                    <img src="<?php the_sub_field('acf_gallery_interior_img');?>">
                     <?php
-                      $image_file = get_sub_field('acf_gallery_interior_img');
-                      $image_size = getimagesize($image_file);
+                      // $image_file = get_sub_field('acf_gallery_interior_img');
+                      // $image_size = getimagesize($image_file);
 
-                      $image_width = $image_size[0];
-                      $image_height = $image_size[1];
+                      // $image_width = $image_size[0];
+                      // $image_height = $image_size[1];
 
-                      if($image_width > $image_height){
-                          echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // if($image_width > $image_height){
+                      //     echo '<img class="object_fit" src="'.get_sub_field('acf_gallery_interior_img').'">';
 
-                      } else if($image_width < $image_height){
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                      } else {
-                          echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
-                      }
+                      // } else if($image_width < $image_height){
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // } else {
+                      //     echo '<img class="object_contain" src="'.get_sub_field('acf_gallery_interior_img').'">';
+                      // }
                     ;?>
                   </div>
                 </li>
@@ -365,9 +376,9 @@
       <div class="mod-btn first"><a href="<?php echo esc_url( home_url('/reservation/') ); ?>?post_id=<?php echo get_the_ID();?>">内覧予約をする</a></div>
       <div class="mod-btn second"><a href="<?php echo esc_url( home_url('/general_contact/') ); ?>">不動産投資について問い合わせる</a></div>
     </div>
-    <!-- 内覧会情報 -->
+    <!-- 周辺情報 -->
     <div class="<?php echo $pageName;?>__around">
-      <div class="<?php echo $pageName;?>__around-ttl">内覧会情報</div>
+      <div class="<?php echo $pageName;?>__around-ttl">周辺情報</div>
       <div class="<?php echo $pageName;?>__around-txt"><?php echo the_field('内覧会案内文');?></div>
     </div>
     <!-- 物件情報 -->
@@ -420,7 +431,7 @@
         if ( !empty($terms) ) : if ( !is_wp_error($terms) ) :
         ?>
         <li class="<?php echo $pageName;?>__property-item">
-          <div class="<?php echo $pageName;?>__property-left">内装特徴</div>
+          <div class="<?php echo $pageName;?>__property-left">アイデア作品群</div>
           <div class="<?php echo $pageName;?>__property-right">
           <?php foreach( $terms as $term ) : ?>
           <div class="<?php echo $pageName;?>__property-feature"><?php echo $term->name; ?></div>
@@ -438,6 +449,5 @@
       <div class="mod-btn first"><a href="<?php echo esc_url( home_url('/reservation/') ); ?>?post_id=<?php echo get_the_ID();?>">内覧予約をする</a></div>
       <div class="mod-btn second"><a href="<?php echo esc_url( home_url('/general_contact/') ); ?>">不動産投資について問い合わせる</a></div>
     </div>
-
   </div>
 </section>

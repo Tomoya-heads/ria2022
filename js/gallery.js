@@ -17,6 +17,7 @@ function checkMediaQuery(){
         speed: 700,
         dots: false,
         draggable: true,
+        focusOnSelect: true,
         swipeToSlide: true,
         infinite : true,
         waitForAnimate: true,
@@ -29,7 +30,7 @@ function checkMediaQuery(){
         dots: false,
         focusOnSelect: false,
         draggable: true,
-        swipeToSlide: true,
+        swipeToSlide: false,
         waitForAnimate: true,
         asNavFor: nav_slider,
       })
@@ -201,4 +202,79 @@ $(function(){
 
 $(function(){
   $('.single-gallery__property-feature:not(:last-of-type)').append('<span>、</span>');
+});
+
+// ギャラリー右画像
+// 1.ページを読み込み後に処理を行う
+$(function (){
+	// 2.imgタグに対して繰り返し処理を行う
+	$('.single-gallery__left-item img').each(function(){
+	// 3.各要素のサイズ設定
+		// 3.1.表示状態の画像の大きさ
+		var img_height = $(this).height();
+		var img_width  = $(this).width();
+		// 3.2.実際の画像の大きさ
+		var img = new Image();
+		img.src = $(this).attr('src');
+		var _width = img.width;
+		// 3.3.画面の横幅
+		var device_width = $(window).width();
+	// 4.縦長横長を判断する
+		if((img_width / img_height) > .9){
+      $(this).addClass('object_fit');
+		}else{
+			// 4.2.縦長の場合
+      $(this).addClass('object_contain');
+		}
+	});
+});
+
+// ギャラリー右画像
+// 1.ページを読み込み後に処理を行う
+$(function (){
+	// 2.imgタグに対して繰り返し処理を行う
+	$('.single-gallery__right-img img').each(function(){
+	// 3.各要素のサイズ設定
+		// 3.1.表示状態の画像の大きさ
+		var img_height = $(this).height();
+		var img_width  = $(this).width();
+		// 3.2.実際の画像の大きさ
+		var img = new Image();
+		img.src = $(this).attr('src');
+		var _width = img.width;
+		// 3.3.画面の横幅
+		var device_width = $(window).width();
+	// 4.縦長横長を判断する
+		if((img_width / img_height) > .9){
+      $(this).addClass('object_fit');
+		}else{
+			// 4.2.縦長の場合
+      $(this).addClass('object_contain');
+		}
+	});
+});
+
+// モーダル
+// 1.ページを読み込み後に処理を行う
+$(function (){
+	// 2.imgタグに対して繰り返し処理を行う
+	$('.single-gallery__modal-item img').each(function(){
+	// 3.各要素のサイズ設定
+		// 3.1.表示状態の画像の大きさ
+		var img_height = $(this).height();
+		var img_width  = $(this).width();
+		// 3.2.実際の画像の大きさ
+		var img = new Image();
+		img.src = $(this).attr('src');
+		var _width = img.width;
+		// 3.3.画面の横幅
+		var device_width = $(window).width();
+	// 4.縦長横長を判断する
+		if((img_width / img_height) > .9){
+      $(this).addClass('object_fit');
+		}else{
+			// 4.2.縦長の場合
+      $(this).addClass('object_contain');
+		}
+	});
 });

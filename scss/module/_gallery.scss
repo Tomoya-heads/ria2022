@@ -2,28 +2,32 @@
   width : 100%;
   &__img {
     padding : 0 (4/1160)*100%;
-    @include flex(flex, wrap, flex-start, stretch, normal, row);
+    @include flex(flex, nowrap, flex-start, stretch, normal, row);
     @include mq_sp{
       padding : 0 size_sp(6);
       flex-direction : column;
     }
     &-left {
       width : (573/1152)*100%;
-      margin-right : (4/1152)*100%;
+      // margin-right : (4/1152)*100%;
+      margin-right : 4px;
       @include mq_sp{
         width : 100%;
         margin-right : 0;
       }
       &-high {
-        height : (382/644)*100%;
+        // height : (382/644)*100%;
+        height : 382px;
         @include mq_sp{
           height : size_sp(492);
         }
       }
       &-low {
-        height : (258/644)*100%;
-        @include flex(flex, wrap, flex-start, stretch, normal, row);
-        margin-top : (4/573)*100%;
+        // height : (258/644)*100%;
+        height : 258px;
+        @include flex(flex, nowrap, flex-start, stretch, normal, row);
+        // margin-top : (4/573)*100%;
+        margin-top : 4px;
         @include mq_sp{
           height : size_sp(331);
           margin-top : size_sp(6);
@@ -31,7 +35,8 @@
         &-left {
           width : (385/573)*100%;
           height : 100%;
-          margin-right : (4/573)*100%;
+          // margin-right : (4/573)*100%;
+          margin-right : 4px;
           @include mq_sp{
             width : size_sp(495);
             margin-right : size_sp(6);
@@ -53,15 +58,17 @@
         margin-top :size_sp(6);
       }
       &-high {
-        height : (253/644)*100%;
-        @include flex(flex, wrap, flex-start, stretch, normal, row);
+        // height : (253/644)*100%;
+        height : 253px;
+        @include flex(flex, nowrap, flex-start, stretch, normal, row);
         @include mq_sp{
           height : size_sp(326);
         }
         &-left {
           width : (192/575)*100%;
           height : 100%;
-          margin-right : (4/575)*100%;
+          // margin-right : (4/575)*100%;
+          margin-right : 4px;
           @include mq_sp{
             width : size_sp(246);
             margin-right : size_sp(6);
@@ -76,31 +83,37 @@
         }
       }
       &-low {
-        height : (387/644)*100%;
+        // height : (387/644)*100%;
+        height : 387px;
+        // margin-top : (4/575)*100%;
         margin-top : 4px;
-        @include flex(flex, wrap, flex-start, stretch, normal, row);
+        @include flex(flex, nowrap, flex-start, stretch, normal, row);
         @include mq_sp{
-          height : 100%;
+          height : size_sp(500);
           margin-top : size_sp(6);
         }
         &-left {
           width : (388/575)*100%;
-          margin-right : (4/575)*100%;
+          // margin-right : (4/575)*100%;
+          margin-right : 4px;
           @include mq_sp{
             width : size_sp(500);
             margin-right : size_sp(6);
           }
           &-high {
             width : 100%;
-            height : (259/387)*100%;
+            // height : (259/387)*100%;
+            height : 259px;
             @include mq_sp{
               height : size_sp(334);
             }
           }
           &-low {
-            height : (124/387)*100%;
-            margin-top : (4/388)*100%;
-            @include flex(flex, wrap, flex-start, stretch, normal, row);
+            // height : (124/387)*100%;
+            height : 124px;
+            // margin-top : (4/388)*100%;
+            margin-top : 4px;
+            @include flex(flex, nowrap, flex-start, stretch, normal, row);
             @include mq_sp{
               height : size_sp(160);
               margin-top : size_sp(6);
@@ -108,7 +121,8 @@
             &-left {
               width : (192/388)*100%;
               height : 100%;
-              margin-right : (4/388)*100%;
+              // margin-right : (4/388)*100%;
+              margin-right : 4px;
               @include mq_sp{
                 width : size_sp(247);
                 margin-right : size_sp(6);
@@ -128,7 +142,7 @@
           height : 100%;
           @include mq_sp{
             width : size_sp(232);
-            height : size_sp(498);
+            height : size_sp(500);
           }
         }
       }

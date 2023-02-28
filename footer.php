@@ -12,7 +12,7 @@
 </div>
 <?php endif;?>
 <div class="common-overlay"></div>
-<div class="gallery-overlay pctab-only"></div>
+<div class="gallery-overlay"></div>
 <span class="common-pageTop" style="display:none"></span>
 <!-- フッター -->
 <footer class="common-footer" id="Footer">
@@ -22,10 +22,12 @@
       <ul class="common-footer__list">
         <li class="common-footer__item"><a href="<?php echo home_url('/service/apartment-building/');?>">デザイナーズ投資アパート 新築</a></li>
         <li class="common-footer__item"><a href="<?php echo home_url('/gallery/');?>">ギャラリー</a></li>
+        <li class="common-footer__item"><a href="<?php echo home_url('/idea-design/');?>">アイデアデザイン</a></li>
         <li class="common-footer__item"><a href="<?php echo home_url('/service/renovation/');?>">リノベーション</a></li>
         <li class="common-footer__item"><a href="<?php echo home_url('/news/');?>">お知らせ</a></li>
         <li class="common-footer__item"><a href="<?php echo home_url('/company/');?>">会社概要</a></li>
         <li class="common-footer__item"><a href="<?php if(is_page('apartment-building')){echo '#faq';}else{echo esc_url( home_url( '/service/apartment-building/#faq' ) );} ?>">よくある質問</a></li>
+        <li class="common-footer__item"><a href="https://radiance.ria-partners.co.jp/" target="_blank">メルマガ</a></li>
         <li class="common-footer__item">
           お問い合わせ
           <ul class="common-footer__subList">

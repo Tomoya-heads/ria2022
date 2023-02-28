@@ -156,3 +156,14 @@ $(function() {
 //     }, 2800)
 //   })
 // })
+$(function(){
+  // $('.select2-hidden-accessible').change(function() {
+  //   var count = $(".select2-hidden-accessible option:selected").length;
+  //   var not = $('.select2-hidden-accessible option').not(':selected');
+  //    if(count >= 2) {
+  //       not.attr("disabled",true);
+  //   }else{
+  //       not.attr("disabled",false);
+  //   }
+  // });
+});

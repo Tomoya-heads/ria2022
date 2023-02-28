@@ -20,6 +20,14 @@ if (!function_exists('RIAパートナーズ_setup')) {
 }
 add_action('after_setup_theme', 'RIAパートナーズ_setup');
 
+// 関連フィールド公開済のみ
+function custom_acf_relationship_query( $args, $field, $post_id ) {
+  $args['post_status'] = 'publish';
+  return $args;
+}
+add_filter( 'acf/fields/relationship/query', 'custom_acf_relationship_query', 10, 3 );
+
+
 function RIAパートナーズ_content_width()
 {
 	$GLOBALS['content_width'] = apply_filters('RIAパートナーズ_content_width', 640);
@@ -77,7 +85,7 @@ function RIAパートナーズ_scripts()
 	if(is_front_page()){
 		wp_enqueue_script('top-scripts', get_template_directory_uri().'/js/top.js', '','',true);
 		wp_enqueue_script('slick-js','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js','','',true);
-	} else if(is_archive('') && !is_post_type_archive('gallery')) {
+	} else if(is_archive('') && !is_post_type_archive('gallery')  && !is_post_type_archive('idea-design')) {
 		wp_enqueue_script('infinite-scripts', get_template_directory_uri().'/js/infinite-scroll.js', '','',true);
 		wp_enqueue_script('post-scripts', get_template_directory_uri().'/js/post.js', '','',true);
 	} else if(is_page('apartment-building') || is_page('renovation')) {
@@ -86,6 +94,8 @@ function RIAパートナーズ_scripts()
 	} else if (is_post_type_archive('gallery') || is_singular('gallery') || is_singular('preview')) {
 		wp_enqueue_script('slick-js','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js','','',true);
 		wp_enqueue_script('gallery-scripts', get_template_directory_uri().'/js/gallery.js', '','',true);
+	}  else if (is_post_type_archive('idea-design') || is_singular('idea-design')) {
+		wp_enqueue_script('idea-design-scripts', get_template_directory_uri().'/js/idea-design.js', '','',true);
 	}
 }
 add_action('wp_enqueue_scripts', 'RIAパートナーズ_scripts');
@@ -95,6 +105,7 @@ add_action('wp_enqueue_scripts', 'RIAパートナーズ_scripts');
 require get_template_directory().'/inc/reset.php';
 require get_template_directory().'/inc/device_if.php';
 require get_template_directory().'/inc/acf_add_options_page.php';
+require get_template_directory().'/inc/acf_select_page.php';
 require get_template_directory().'/inc/add_mw_wp_form.php';
 require get_template_directory().'/inc/body_class.php';
 require get_template_directory().'/inc/hide_author.php';

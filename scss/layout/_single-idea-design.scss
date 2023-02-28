@@ -1,0 +1,298 @@
+.single-idea-design {
+  & h2 {
+    display: flex;
+    justify-content: center;
+    & span {
+      font-size : 26px;
+      font-weight: 300;
+      line-height : (37/26);
+      letter-spacing: .1em;
+      display: inline-block;
+      position: relative;
+      @include mq_sp{
+        @include fz_vw(32);
+        line-height: (46/32);
+      }
+      &::before {
+        content : "";
+        width : 28px;
+        height : 28px;
+        background-image: url(./img/common/icn_brackets.svg);
+        background-size : cover;
+        background-repeat: no-repeat;
+        position : absolute;
+        top : -6px;
+        left : -45px;
+        @include mq_sp{
+          width : size_sp(37);
+          height : size_sp(37);
+          top : size_sp(-7);
+          left : size_sp(-62);
+        }
+      }
+      &::after {
+        content : "";
+        width : 28px;
+        height : 28px;
+        background-image: url(./img/common/icn_brackets.svg);
+        background-size : cover;
+        background-repeat: no-repeat;
+        position : absolute;
+        bottom : -3px;
+        right : -45px;
+        transform: rotate(180deg);
+        @include mq_sp{
+          width : size_sp(37);
+          height : size_sp(37);
+          bottom : size_sp(-7);
+          right : size_sp(-62);
+        }
+      }
+    }
+  }
+  &__inner {
+    width : 606px;
+    padding-top : 80px;
+    margin : 0 auto;
+    @include mq_sp{
+      width : size_sp(600);
+      padding-top : size_sp(100);
+    }
+  }
+  &__ttl {
+    font-size : 28px;
+    line-height : (40/28);
+    letter-spacing: .1em;
+    text-align: center;
+    @include mq_sp{
+      @include fz_vw(36);
+      line-height : (52/36);
+    }
+    &:not(:first-of-type) {
+      margin-top : 22px;
+      @include mq_sp{
+        margin-top : size_sp(24);
+      }
+    }
+    &-sub {
+      display: inline-block;
+    }
+  }
+  &__thumb {
+    margin-top : 50px;
+    @include mq_sp{
+      margin-top : size_sp(50);
+    }
+  }
+  &__property {
+    padding-top : 149px;
+    @include mq_sp{
+      padding-top : size_sp(178);
+    }
+    &-ttl {
+      font-size : 20px;
+      line-height : (29/20);
+      text-align: center;
+      margin-top : 30px;
+      @include mq_sp{
+        @include fz_vw(28);
+        line-height : (40/28);
+        margin-top : size_sp(30);
+      }
+    }
+    &-thumb {
+      width : 372px;
+      margin : 34px auto 0;
+      @include mq_sp{
+        width : size_sp(465);
+        margin-top : size_sp(57);
+      }
+      & img {
+        width : 100%;
+        object-fit: cover;
+      }
+    }
+    &-name {
+      font-size : 18px;
+      line-height : (26/18);
+      font-weight: 700;
+      text-align: center;
+      margin-top : 24px;
+      @include mq_sp{
+        @include fz_vw(32);
+        line-height : (46/32);
+        margin-top : size_sp(30);
+      }
+    }
+    &-address {
+      font-size : 16px;
+      line-height : (24/16);
+      text-align: center;
+      margin-top : 10px;
+      @include mq_sp{
+        @include fz_vw(26);
+        line-height : (37/26);
+        margin-top : size_sp(24);
+      }
+    }
+  }
+  &__list {
+    margin-top : 55px;
+    @include mq_sp{
+      margin-top : size_sp(87);
+    }
+  }
+  &__item {
+    &:not(:first-of-type) {
+      margin-top : 125px;
+      @include mq_sp{
+        margin-top : size_sp(156);
+      }
+    }
+  }
+  &__txt {
+    font-size : 16px;
+    line-height : (37/16);
+    margin-top : 48px;
+    @include mq_sp{
+      @include fz_vw(30);
+      line-height : (62/30);
+      margin-top : size_sp(68);
+    }
+  }
+  // FAQ
+  &__faq {
+    padding-top : 193px;
+    @include mq_sp{
+      padding-top :size_sp(192);
+    }
+    &-list {
+      margin : 42px auto 0;
+      @include mq_sp{
+        margin-top : size_sp(60);
+      }
+    }
+    &-item {
+      padding : 24px 0;
+      border-bottom : solid 1px $blue02;
+      cursor : pointer;
+      @include mq_sp{
+        padding : size_sp(40) 0;
+        border-bottom : solid size_sp(2) $blue02;
+      }
+      &:first-of-type {
+        border-top : solid 1px $blue02;
+        @include mq_sp{
+          border-top : solid size_sp(2) $blue02;
+        }
+      }
+      &.active {
+        & .single-idea-design__faq-question-right {
+          transform : rotate(0);
+        }
+      }
+    }
+    &-question {
+      font-size : 16px;
+      font-weight: 700;
+      line-height : (37/16);
+      color : $blue02;
+      width : 566px;
+      margin : 0 auto;
+      @include flex(flex, nowrap, space-between, center, normal, row);
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+        width : size_sp(560);
+      }
+      &-right {
+        width : 30px;
+        transform : rotate(-180deg);
+        transition : .6s;
+        @include mq_sp{
+          width : size_sp(42);
+        }
+        & img {
+          vertical-align: middle;
+        }
+      }
+    }
+    &-answer {
+      font-size : 16px;
+      line-height : (37/16);
+      width : 566px;
+      padding-left : 16px;
+      margin : 17px auto 5px;
+      display: none;
+      @include mq_sp{
+        @include fz_vw(28);
+        line-height : (58/28);
+        width : size_sp(560);
+        margin : size_sp(32) auto 0;
+        padding-left : size_sp(30);
+      }
+    }
+  }
+  &__content {
+    padding-top : 155px;
+    @include mq_sp{
+      padding-top : size_sp(186);
+    }
+    & p {
+      font-size : 16px;
+      line-height : (37/16);
+      @include mq_sp{
+        @include fz_vw(30);
+        line-height : (62/30);
+      }
+    }
+  }
+  &__article {
+    padding-top : 151px;
+    @include mq_sp{
+      padding-top : size_sp(180);
+    }
+    &-group {
+      width : 961px;
+      margin : 40px auto 0;
+      @include flex($display: flex, $wrap: wrap, $justify_c: flex-start, $align_i: flex-start, $align_c: stretch, $direction: row,);
+      @media (max-width: 1163px){
+        width : 627px;
+      }
+      @include mq_sp{
+        width : size_sp(676);
+        margin-top : size_sp(60);
+      }
+    }
+    &-ttl {
+      font-size : 24px;
+      line-height : (35/24);
+      letter-spacing: .1em;
+      text-align: center;
+      @include mq_sp{
+        @include fz_vw(34);
+        line-height : (49/34);
+      }
+    }
+    & .mod-btn {
+      width : 372px;
+      margin : 0 auto;
+      @include mq_sp{
+        width : size_sp(572);
+      }
+      &.back {
+        margin-top : 98px;
+        @include mq_sp{
+          margin-top : size_sp(150);
+        }
+        &:before {
+          left : auto;
+          right : 350px;
+          @include mq_sp{
+            right : size_sp(538);
+          }
+        }
+      }
+    }
+  }
+}

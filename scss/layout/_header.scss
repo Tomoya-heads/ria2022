@@ -108,17 +108,17 @@
     }
   }
   &__nav{
-    font-size : 12px;
+    font-size : 11px;
     font-weight : 700;
     text-align : center;
     width : 160px;
     position : absolute;
-    top : 109px;
+    top : 110px;
     left : 50%;
     transform : translateX(-50%);
     @include mq_sp{
       @include fz_vw(26);
-      width : size_sp(270);
+      width : size_sp(285);
       height : calc(100vh - #{size_sp(100)});
       background-color : rgba(10,113,173,.9);
       top : size_sp(100);
@@ -134,7 +134,8 @@
     width: 100%;
     @include mq_sp{
       text-align : left;
-      width : size_sp(160);
+      width : size_sp(239);
+      padding-left : size_sp(32);
       margin : size_sp(42) auto 0;
     }
   }
@@ -147,15 +148,21 @@
       width : 100%;
     }
     &:not(:first-of-type) {
-      margin-top : 18px;
+      margin-top : 11px;
       @include mq_sp{
         margin-top : size_sp(33);
+      }
+    }
+    &:nth-of-type(4) {
+      width : 100px;
+      @include mq_sp{
+        width : 100%;
       }
     }
     &:first-of-type {
       text-align: left;
       width : 116px;
-      padding-left : 12px;
+      padding-left : 14px;
       margin-left : auto;
       margin-right : 0;
       @include mq_sp{
@@ -164,14 +171,14 @@
       }
       &:before {
         content : "";
-        width : 30px;
+        width : 31px;
         height : 2px;
         background-color : $white00;
         top : 50%;
-        left : 66px;
+        left : 64px;
         transform : translateY(-50%);
         @include mq_sp{
-          width : size_sp(91);
+          width : size_sp(106);
           height : size_sp(4);
           left : size_sp(124);
         }
@@ -181,13 +188,13 @@
         transition-duration : 0.4s;
         transition-delay : 0s;
         @include mq_sp{
-          width : size_sp(450);
+          width : size_sp(430);
         }
       }
     }
     &:last-of-type {
       text-align: left;
-      width : 116px;
+      width : 114px;
       margin-left : auto;
       margin-right : 0;
       @include mq_sp{
@@ -195,14 +202,14 @@
       }
       &:before {
         content : "";
-        width : 18px;
+        width : 21px;
         height : 2px;
         background-color : $white00;
         top : 50%;
-        left : 78px;
+        left : 73px;
         transform : translateY(-50%);
         @include mq_sp{
-          width : size_sp(39);
+          width : size_sp(54);
           height : size_sp(4);
           left : size_sp(176);
         }
@@ -212,7 +219,7 @@
         transition-duration : 0.4s;
         transition-delay : 0s;
         @include mq_sp{
-          width : size_sp(450);
+          width : size_sp(430);
         }
       }
     }
@@ -248,7 +255,7 @@
           transition-duration : .4s;
           transition-delay: 0s;
           @include mq_sp{
-            width : size_sp(121);
+            width : size_sp(141);
           }
         }
       }
@@ -258,7 +265,7 @@
           transition-duration : .4s;
           transition-delay: 0s;
           @include mq_sp{
-            width : size_sp(69);
+            width : size_sp(89);
           }
         }
       }
@@ -269,6 +276,14 @@
           left : -12px;
           @include mq_sp{
             left : size_sp(-40);
+          }
+        }
+      }
+      &:first-of-type {
+        &:after {
+          left : 0;
+          @include mq_sp{
+            left : size_sp(-38);
           }
         }
       }
@@ -298,7 +313,7 @@
           transform : translateY(-45%);
         }
       }
-      }
+    }
   }
   &__subList {
     font-size : 12px;
@@ -320,7 +335,7 @@
       width : size_sp(450);
       padding : size_sp(30);
       top : size_sp(-22);
-      left : size_sp(245);
+      left : size_sp(265);
     }
   }
   &__subItem {
@@ -430,7 +445,7 @@
         transform : translateY(-50%);
         transition : .6s;
         @include mq_sp{
-          width : size_sp(50);
+          width : size_sp(58);
           height : size_sp(4);
           left : size_sp(186);
         }

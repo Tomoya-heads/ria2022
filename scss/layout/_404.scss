@@ -1,10 +1,16 @@
 .page-404{
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
   &__inner {
-    width : 489px;
-    margin : 107px auto 0;
+    width : 619px;
+    padding-left : 120px;
+    margin : 0 auto 0;
     text-align: center;
     @include mq_sp{
       width : size_sp(629);
+      padding-left : 0;
       margin-top : size_sp(38);
     }
   }
